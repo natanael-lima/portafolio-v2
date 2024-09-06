@@ -35,19 +35,15 @@ export default function About({ darkMode }:ModeProps) {
           <div className="flex flex-col items-center items-start space-y-4">
             {/* About Me Content */}
             <div className="text-justify">
-              
-
                 <p className="text-lg mb-4">
-                ¡Hola! Soy <span className="text-sky-400 font-semibold">Analista Programador Universitario</span> de Jujuy, Argentina, con experiencia en <span className="text-sky-400 font-semibold">desarrollo de aplicaciones web y desktop</span> y <span className="text-sky-400 font-semibold">organización de datos</span>.
+                    Hello! I am a <span className="text-sky-400 font-semibold">University Programmer Analyst</span> from Jujuy, Argentina, with experience in <span className="text-sky-400 font-semibold">web and desktop application development</span> and <span className="text-sky-400 font-semibold">data organization</span>.
                 </p>
                 <p className="text-lg mb-4">
-                Me especializo en la <span className="text-sky-400 font-semibold">implementación de soluciones prácticas y eficientes</span>, utilizando un conjunto de <span className="text-sky-400 font-semibold">tecnologías</span>. Mi enfoque está en la <span className="text-sky-400 font-semibold">creación de software funcional y adaptable</span>.
+                    I specialize in <span className="text-sky-400 font-semibold">implementing practical and efficient solutions</span>, using a set of <span className="text-sky-400 font-semibold">technologies</span>. My focus is on <span className="text-sky-400 font-semibold">creating functional and adaptable software</span>.
                 </p>
                 <p className="text-lg mb-4">
-                Soy una persona <span className="text-sky-400 font-semibold">responsable</span> y <span className="text-sky-400 font-semibold">organizada</span>, que disfruta trabajar en equipo para lograr los objetivos del proyecto. Me apasiona <span className="text-sky-400 font-semibold">contribuir al avance tecnológico</span>.
+                    I am a <span className="text-sky-400 font-semibold">responsible</span> and <span className="text-sky-400 font-semibold">organized</span> person who enjoys working in a team to achieve project goals. I am passionate about <span className="text-sky-400 font-semibold">contributing to technological advancement</span>.
                 </p>
-
-
             </div>
           </div>
 
