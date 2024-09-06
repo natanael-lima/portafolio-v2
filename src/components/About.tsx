@@ -25,7 +25,7 @@ export default function About({ darkMode }:ModeProps) {
               href="https://www.linkedin.com/in/natanael-ever-lima-gutierrez-9bb695259/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-amber-400 transition-colors duration-300 hover:scale-110 transition"
+              className={` hover:scale-110 transition ${darkMode ? 'hover:text-amber-400 transition-colors duration-300' : 'hover:text-slate-600 transition-colors duration-300'}`} 
             >
               <FaLinkedin size={24} />
             </a>
@@ -33,13 +33,13 @@ export default function About({ darkMode }:ModeProps) {
               href="https://github.com/natanael-lima"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-amber-400 transition-colors duration-300 hover:scale-110 transition"
+              className={` hover:scale-110 transition ${darkMode ? 'hover:text-amber-400 transition-colors duration-300' : 'hover:text-slate-600 transition-colors duration-300'}`} 
             >
               <FaGithub size={24} />
             </a>
             <a
               href="https://api.whatsapp.com/send?phone=5493884670317"
-              className="hover:text-amber-400 transition-colors duration-300 hover:scale-110 transition"
+              className={` hover:scale-110 transition ${darkMode ? 'hover:text-amber-400 transition-colors duration-300' : 'hover:text-slate-600 transition-colors duration-300'}`} 
             >
               <BsWhatsapp size={24} />
             </a>
@@ -47,7 +47,7 @@ export default function About({ darkMode }:ModeProps) {
               target="_blank"
               href="/CV.pdf" // Ruta relativa desde la raíz pública
               download="CV-LIMA-NATANAEL.pdf"
-              className="hover:text-amber-400 transition-colors duration-300 hover:scale-110 transition" 
+              className={` hover:scale-110 transition ${darkMode ? 'hover:text-amber-400 transition-colors duration-300' : 'hover:text-slate-600 transition-colors duration-300'}`} 
             >
               <BiSolidFilePdf size={24} />
             </a>
@@ -60,9 +60,11 @@ export default function About({ darkMode }:ModeProps) {
           <div className="flex flex-col items-center items-start space-y-4">
             {/* About Me Content */}
             <div className="text-start">
-                 <h1 className='text-3xl mb-3 font-semibold font-mono'>Hey, I am Natanael Lima</h1>
+                <h1 className="text-4xl mb-6 font-extrabold text-slate-400/90 ">
+                  Hey, I am Natanael Lima
+                </h1>
                 <p className="text-lg mb-4">
-                     <span className="text-amber-500 font-semibold">Programmer Analyst</span> from Jujuy, Argentina, with experience in <span className="text-amber-500 font-semibold">web and desktop application development</span> and <span className="text-amber-500 font-semibold">data organization</span>.
+                     <span className="text-amber-500 font-semibold">Software Developer/Programmer Analyst</span> from Jujuy, Argentina, with experience in <span className="text-amber-500 font-semibold">web and desktop application development</span> and <span className="text-amber-500 font-semibold">data organization</span>.
                 </p>
                 <p className="text-lg mb-4">
                     I specialize in <span className="text-amber-500 font-semibold">implementing practical and efficient solutions</span>, using a set of <span className="text-amber-500 font-semibold">technologies</span>. My focus is on <span className="text-amber-500 font-semibold">creating functional and adaptable software</span>.

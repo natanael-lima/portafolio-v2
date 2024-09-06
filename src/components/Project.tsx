@@ -73,7 +73,7 @@ const projects = [
   {
     name: 'Hotel System',
     img: 'https://i.postimg.cc/Vv7sr9Lh/hotel-project.png',
-    description: 'A RESTful API built with Node.js and Docker for containerization and deployment.',
+    description: 'A hotel reservation system built with Spring Boot and React, using PostgreSQL for data management. It offers a seamless booking experience with a modern, full-stack architecture.',
     technologies: ['React','Tailwind','Vite','HTML','Node.js', 'Docker', 'Spring','Postgresql'],
     githubLink: 'https://github.com/yourusername/docker-nodejs-api',
     liveDemo: 'https://yourwebsite.com/docker-nodejs-api'
@@ -107,10 +107,10 @@ export default function Project({ darkMode }:ModeProps) {
                 </div>
               </div>
               <div className="flex gap-4">
-                <a href={item.liveDemo} className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full flex items-center">
+                <a href={item.liveDemo} className={`px-4 py-2 rounded-full flex items-center ${darkMode ? 'bg-amber-500 hover:bg-amber-600 text-white' : 'bg-slate-800 hover:bg-slate-900 text-white'}`} >
                   <FaEye size={16} className="mr-2" /> Live Demo
                 </a>
-                <a href={item.githubLink} className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full flex items-center">
+                <a href={item.githubLink} className={`px-4 py-2 rounded-full flex items-center ${darkMode ? 'bg-amber-500 hover:bg-amber-600 text-white' : 'bg-slate-800 hover:bg-slate-900 text-white'}`} >
                   <FaGithub size={16} className="mr-2" /> Source Code
                 </a>
               </div>

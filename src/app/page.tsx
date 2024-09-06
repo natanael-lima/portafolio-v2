@@ -1,5 +1,6 @@
 'use client'
 
+import "./globals.css";
 import React, { useEffect, useState } from 'react'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -26,6 +27,8 @@ export default function Home() {
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-slate-900 text-slate-200' : 'bg-slate-200 text-slate-900'}`}>
     <div className="mx-auto w-full px-4 sm:w-4/5 md:w-3/4 lg:w-3/5">
+      {/* Agregar el elemento para el efecto de degradado*/}
+      
       {/* Pasar darkMode y setDarkMode como props al Header */}
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main className="py-12">
