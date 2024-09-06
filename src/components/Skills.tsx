@@ -52,7 +52,7 @@ export default function Skills({ darkMode }:ModeProps) {
 
   <div className="space-y-6">
     {/* Frontend Development */}
-    <div className="p-4 w-full">
+    <div className="p-2 lg:p-0 w-full">
       <h3 className="text-xl font-semibold mb-3">Frontend Development</h3>
       <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-4">
         {frontendSkills.map((skill) => (
@@ -70,7 +70,7 @@ export default function Skills({ darkMode }:ModeProps) {
     </div>
 
     {/* Backend Development */}
-    <div className="p-4 w-full">
+    <div className="p-2 lg:p-0 w-full">
       <h3 className="text-xl font-semibold mb-3">Backend Development</h3>
       <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-5">
         {backendSkills.map((skill) => (
@@ -88,7 +88,7 @@ export default function Skills({ darkMode }:ModeProps) {
     </div>
 
     {/* Extras */}
-    <div className="p-4 w-full">
+    <div className="p-2 lg:p-0 w-full">
       <h3 className="text-xl font-semibold mb-3">Extras</h3>
       <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-4">
         {extraSkills.map((skill) => (
