@@ -9,7 +9,7 @@ const projects = [
   {
     name: 'Parking System Management',
     img: 'https://i.postimg.cc/KzLFw5MM/project-playa.png',
-    description: 'A parking management system for multiple zones, handling vehicle entry/exit, ticketing, and customer management. It tracks occupied/free spaces, generates sales reports, and supports administrative tasks. The system also manages vehicle types and user roles.',
+    description: 'System for multiple zones that handles vehicle entry/exit, ticketing, and customer management. It also tracks space availability and generates sales reports.',
     technologies: ['C#', 'WPF', '.NET','SQL Server'],
     githubLink: 'https://github.com/yourusername/html-css-portfolio',
     liveDemo: 'https://yourwebsite.com/html-css-portfolio'
@@ -17,7 +17,7 @@ const projects = [
   {
     name: 'Clinical Shift Management',
     img:'https://i.postimg.cc/vZLqmqJz/project-clinical.png',
-    description: 'A shift management system for an ophthalmology clinic that registers patients, doctors, and insurance, manages appointments with schedule validation, and sends email notifications. It includes a REST API for CRUD with design patterns and unit testing.',
+    description: 'System for an ophthalmology clinic with appointment scheduling, patient and doctor management, and email notifications, featuring a REST API and unit testing.',
     technologies: ['Java', 'Spring', 'JPA', 'Rest API', 'Postman', 'Unit Tests', 'MySQL'],
     githubLink: 'https://github.com/yourusername/typescript-calculator',
     liveDemo: 'https://yourwebsite.com/typescript-calculator'
@@ -25,7 +25,7 @@ const projects = [
   {
     name: 'Optical System Management',
     img: 'https://i.postimg.cc/jj0MvQt9/project-optica.png',
-    description: 'A Windows Forms sales management system for an optician that handles clients, products, users, and sales. It offers registration, modification, and query features, along with detailed sales tracking and reporting.',
+    description: 'A Windows Forms sales management system for an optician that manages clients, products, and sales with features for registration, modification, and detailed reporting.',
     technologies: ['C#', 'WinForms', '.NET Framework', 'SQL Server', 'Stored Procedure'],
     githubLink: 'https://github.com/yourusername/angular-ecommerce',
     liveDemo: 'https://yourwebsite.com/angular-ecommerce'
@@ -33,7 +33,7 @@ const projects = [
   {
     name: 'Postulants System Management',
     img: 'https://i.postimg.cc/7PXZW4MN/psm-project.png',
-    description: 'Web system for job applications where users can register, apply for job offers, and track their application status. It includes an admin module for recruiting staff to manage and review applications. Users can upload personal information and required documents.',
+    description: 'A web system for job applications with user registration, application tracking, and an admin module for managing and reviewing submissions.',
     technologies : ['Java', 'Spring Boot', 'Thymeleaf', 'HTML', 'Bootstrap', 'JPA', 'MySQL'],
     githubLink: 'https://github.com/yourusername/bootstrap-admin-dashboard',
     liveDemo: 'https://yourwebsite.com/bootstrap-admin-dashboard'
@@ -41,7 +41,7 @@ const projects = [
   {
     name: 'Comprehensive Sales System',
     img: 'https://i.postimg.cc/Pxj5BrRS/sales-project.png',
-    description: 'A sales and product management system for classic car model businesses, using the classicmodels database. It allows users to manage customers, products, and sales orders, with roles for employees to handle sales and inventory, and administrators to oversee users, products, and settings.',
+    description: 'A sales management system for classic car models with user roles for managing sales, products, and settings.',
     technologies :['Java', 'Spring Boot','Thymeleaf', 'HTML', 'CSS', 'Bootstrap', 'MySQL'],
     githubLink: 'https://github.com/yourusername/winform-inventory',
     liveDemo: 'https://yourwebsite.com/winform-inventory'
@@ -49,7 +49,7 @@ const projects = [
   {
     name: 'Event Management System',
     img: 'https://i.postimg.cc/Dw9DgWSY/event-project.png',
-    description: 'A web system for managing business meetings, allowing administrators to schedule, manage, and track meetings with detailed reporting. Participants can view agendas, access meeting details, and perform advanced searches. The system offers an intuitive interface for a better user experience.',
+    description: 'A web system for scheduling and tracking business meetings, with detailed reporting and participant access to agendas and meeting details.',
     technologies : ['HTML', 'CSS', 'Bootstrap', 'Angular', 'NodeJS', 'Postman', 'Express', 'TypeScript', 'MongoDB'],
     githubLink: 'https://github.com/yourusername/wpf-media-player',
     liveDemo: 'https://yourwebsite.com/wpf-media-player'
@@ -57,7 +57,7 @@ const projects = [
   {
     name: 'Lovely Dating App',
     img: 'https://i.postimg.cc/PxQ5hnGT/lovely-project.png',
-    description: 'Lovely is a dating app similar to Tinder, enabling user registration, profile creation, and real-time chatting with WebSocket. It features a search engine for matches, mutual match conversations, and profile editing with security options.',
+    description: 'Lovely is a dating app like Tinder, offering user registration, profile creation, real-time chatting, and a match search engine with mutual match conversations.',
     technologies : ['Java', 'HTML', 'CSS', 'Angular', 'RESTful', 'Postman', 'MySQL', 'Spring Boot','JWT', 'WebSocket'],
     githubLink: 'https://github.com/yourusername/thymeleaf-blog',
     liveDemo: 'https://yourwebsite.com/thymeleaf-blog'
@@ -65,7 +65,7 @@ const projects = [
   {
     name: 'Griiin E-commerce Platform',
     img: 'https://i.postimg.cc/mkZ2gpRM/ecommerce-project.png',
-    description: 'Project Griiin is an e-commerce platform with an admin panel for managing users, categories, and products. It includes search and filtering features for a smooth shopping experience.',
+    description: 'Platform with an admin panel for managing users, categories, and products. It includes search and filtering features for a smooth shopping experience.',
     technologies: ['Java', 'HTML', 'CSS', 'Angular', 'RESTful API', 'Postman', 'MySQL', 'Spring Boot','JWT'],
     githubLink: 'https://github.com/yourusername/docker-nodejs-api',
     liveDemo: 'https://yourwebsite.com/docker-nodejs-api'
@@ -73,7 +73,7 @@ const projects = [
   {
     name: 'Hotel System',
     img: 'https://i.postimg.cc/Vv7sr9Lh/hotel-project.png',
-    description: 'A hotel reservation system built with Spring Boot and React, using PostgreSQL for data management. It offers a seamless booking experience with a modern, full-stack architecture.',
+    description: 'System built with Spring Boot and React, using PostgreSQL for data management. It offers a seamless booking experience with a modern, full-stack architecture.',
     technologies: ['React','Tailwind','Vite','HTML','Node.js', 'Docker', 'Spring','Postgresql'],
     githubLink: 'https://github.com/yourusername/docker-nodejs-api',
     liveDemo: 'https://yourwebsite.com/docker-nodejs-api'
@@ -84,7 +84,7 @@ export default function Project({ darkMode }:ModeProps) {
 
 
   return (
-    <section id="portfolio" className="mb-12">
+    <section id="portfolio" className="p-3 lg:p-0 mb-12">
       <h2 className="text-3xl font-bold mb-4 flex items-center justify-center lg:justify-start ">
         Projects <strong className='text-amber-400'>.</strong>
       </h2>

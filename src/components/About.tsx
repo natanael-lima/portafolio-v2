@@ -59,7 +59,7 @@ export default function About({ darkMode }:ModeProps) {
         <div className="flex flex-col items-start space-y-4 md:space-y-0 md:ml-8">
           <div className="flex flex-col items-center items-start space-y-4">
             {/* About Me Content */}
-            <div className="text-start">
+            <div className="p-3 lg:p-0 text-start">
                 <h1 className="text-4xl mb-6 font-extrabold text-slate-400/90 ">
                   Hey, I am Natanael Lima
                 </h1>

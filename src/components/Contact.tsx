@@ -6,7 +6,7 @@ interface ModeProps {
 }
 export default function Contact({ darkMode }:ModeProps) {
   return (
-    <section id="contact" className="mb-12">
+    <section id="contact" className="p-3 lg:p-0 mb-12">
     <h2 className="text-3xl font-bold mb-4 flex items-center justify-center lg:justify-start">Contact Me<strong className='text-amber-400'>.</strong></h2>
     <div className={` rounded-lg p-6  ${darkMode ? 'bg-slate-800' : 'bg-slate-300'}`}>
       <p className="text-lg mb-4">
