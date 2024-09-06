@@ -32,7 +32,7 @@ const projects = [
   },
   {
     name: 'Postulants System Management',
-    img: 'https://i.postimg.cc/3xcBNsL2/project-asm2.png',
+    img: 'https://i.postimg.cc/7PXZW4MN/psm-project.png',
     description: 'Web system for job applications where users can register, apply for job offers, and track their application status. It includes an admin module for recruiting staff to manage and review applications. Users can upload personal information and required documents.',
     technologies : ['Java', 'Spring Boot', 'Thymeleaf', 'HTML', 'Bootstrap', 'JPA', 'MySQL'],
     githubLink: 'https://github.com/yourusername/bootstrap-admin-dashboard',
@@ -40,7 +40,7 @@ const projects = [
   },
   {
     name: 'Comprehensive Sales System',
-    img: 'https://i.postimg.cc/HjGmTZqm/project-gestioninventario.png',
+    img: 'https://i.postimg.cc/Pxj5BrRS/sales-project.png',
     description: 'A sales and product management system for classic car model businesses, using the classicmodels database. It allows users to manage customers, products, and sales orders, with roles for employees to handle sales and inventory, and administrators to oversee users, products, and settings.',
     technologies :['Java', 'Spring Boot','Thymeleaf', 'HTML', 'CSS', 'Bootstrap', 'MySQL'],
     githubLink: 'https://github.com/yourusername/winform-inventory',
@@ -48,7 +48,7 @@ const projects = [
   },
   {
     name: 'Event Management System',
-    img: 'https://i.postimg.cc/L4JZ6JcQ/project-gestioneventos.png',
+    img: 'https://i.postimg.cc/Dw9DgWSY/event-project.png',
     description: 'A web system for managing business meetings, allowing administrators to schedule, manage, and track meetings with detailed reporting. Participants can view agendas, access meeting details, and perform advanced searches. The system offers an intuitive interface for a better user experience.',
     technologies : ['HTML', 'CSS', 'Bootstrap', 'Angular', 'NodeJS', 'Postman', 'Express', 'TypeScript', 'MongoDB'],
     githubLink: 'https://github.com/yourusername/wpf-media-player',
@@ -56,7 +56,7 @@ const projects = [
   },
   {
     name: 'Lovely Dating App',
-    img: 'https://i.postimg.cc/J4QznsVc/project-lovely-v2.png',
+    img: 'https://i.postimg.cc/PxQ5hnGT/lovely-project.png',
     description: 'Lovely is a dating app similar to Tinder, enabling user registration, profile creation, and real-time chatting with WebSocket. It features a search engine for matches, mutual match conversations, and profile editing with security options.',
     technologies : ['Java', 'HTML', 'CSS', 'Angular', 'RESTful', 'Postman', 'MySQL', 'Spring Boot','JWT', 'WebSocket'],
     githubLink: 'https://github.com/yourusername/thymeleaf-blog',
@@ -64,7 +64,7 @@ const projects = [
   },
   {
     name: 'Griiin E-commerce Platform',
-    img: 'https://i.postimg.cc/c6qqxRhB/project-ecommerce.png',
+    img: 'https://i.postimg.cc/mkZ2gpRM/ecommerce-project.png',
     description: 'Project Griiin is an e-commerce platform with an admin panel for managing users, categories, and products. It includes search and filtering features for a smooth shopping experience.',
     technologies: ['Java', 'HTML', 'CSS', 'Angular', 'RESTful API', 'Postman', 'MySQL', 'Spring Boot','JWT'],
     githubLink: 'https://github.com/yourusername/docker-nodejs-api',
@@ -72,7 +72,7 @@ const projects = [
   },
   {
     name: 'Hotel System',
-    img: 'https://i.postimg.cc/yx8G1Czn/project-hotel-system.jpgg',
+    img: 'https://i.postimg.cc/Vv7sr9Lh/hotel-project.png',
     description: 'A RESTful API built with Node.js and Docker for containerization and deployment.',
     technologies: ['React','Tailwind','Vite','HTML','Node.js', 'Docker', 'Spring','Postgresql'],
     githubLink: 'https://github.com/yourusername/docker-nodejs-api',
