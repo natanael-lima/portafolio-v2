@@ -29,10 +29,10 @@ export default function Home() {
       {/* Pasar darkMode y setDarkMode como props al Header */}
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main className="py-12">
-        <About/>
-        <Skills/>
-        <Project/>
-        <Contact/>
+        <About  darkMode={darkMode} />
+        <Skills darkMode={darkMode}/>
+        <Project darkMode={darkMode}/>
+        <Contact darkMode={darkMode}/>
       </main>
       <Footer/>
     </div>
