@@ -60,7 +60,7 @@ export default function About({ darkMode }:ModeProps) {
           <div className="flex flex-col items-center items-start space-y-4">
             {/* About Me Content */}
             <div className="p-3 lg:p-0 text-start">
-                <h1 className="text-4xl mb-6 font-extrabold text-slate-400/90 ">
+                <h1 className="text-2xl lg:text-4xl mb-6 font-extrabold text-slate-400/90 ">
                   Hey, I am Natanael Lima
                 </h1>
                 <p className="text-lg mb-4">
@@ -74,14 +74,15 @@ export default function About({ darkMode }:ModeProps) {
                 </p>
             </div>
           </div>
-            {/* Open to Work Button */}
-            <span className={`rounded-full flex items-center mt-5  ${darkMode ? 'border-2 border-amber-500 bg-none hover:bg-amber-500' : 'border-2 border-slate-600 bg-none hover:bg-slate-800'}`}>
+           {/* Open to Work Button */}
+           <span className={`ml-3 lg:ml-0 rounded-full flex items-center lg:justify-start mt-5  ${darkMode ? 'border-2 border-amber-500 bg-none hover:bg-amber-500' : 'border-2 border-slate-600 bg-none hover:bg-slate-800'}`}>
               <a
                 href="https://www.linkedin.com/in/natanael-ever-lima-gutierrez-9bb695259/" className={`p-2 flex items-center  no-underline  ${darkMode ? 'text-amber-500 hover:text-amber-50' : 'text-slate-600 hover:text-slate-50'}`}>
                 <span className="px-1 font-semibold">Available To Work</span>
                 <MdArrowOutward size={20} />
               </a>
             </span>
+           
           
         </div>
       </div>
