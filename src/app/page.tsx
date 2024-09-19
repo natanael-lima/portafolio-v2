@@ -34,7 +34,7 @@ export default function Home() {
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main className="py-12">
         <About  darkMode={darkMode} />
-        <Skills darkMode={darkMode}/>
+        <Skills />
         <Project/>
         <Contact darkMode={darkMode}/>
       </main>
