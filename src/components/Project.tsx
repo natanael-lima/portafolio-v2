@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { FaHtml5, FaCss3Alt, FaAngular, FaBootstrap, FaJava, FaNodeJs, FaEye, FaGithub } from 'react-icons/fa'
+import { FaHtml5, FaCss3Alt, FaAngular, FaBootstrap, FaJava, FaNodeJs } from 'react-icons/fa'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { DiDotnet } from 'react-icons/di'
 import { SiThymeleaf, SiCsharp, SiSpring, SiMongodb, SiMicrosoftsqlserver, SiJsonwebtokens } from 'react-icons/si'
 import { GrMysql } from 'react-icons/gr'
 import { AiOutlineDotNet } from 'react-icons/ai'
-
+import { FaRegEye } from "react-icons/fa";
+import { FaCode } from "react-icons/fa";
 const projects = [
   {
     name: 'Parking System Management',
@@ -180,17 +181,17 @@ export default function Project() {
       <div className="flex gap-1">
         <a 
           href={project.liveDemo} 
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-white hover:text-gray-500 text-gray-900 transition-colors"
+          className="w-7 h-7 flex items-center justify-center rounded-full bg-white hover:text-gray-500 text-gray-900 transition-colors"
           aria-label="View Live Demo"
         >
-          <FaEye size={20} />
+          <FaRegEye size={15} />
         </a>
         <a 
           href={project.githubLink} 
-          className="w-10 h-10 flex items-center justify-center rounded-full bg-white hover:text-gray-500 text-gray-900 transition-colors"
+          className="w-7 h-7  flex items-center justify-center rounded-full bg-white hover:text-gray-500 text-gray-900 transition-colors"
           aria-label="View Source Code"
         >
-          <FaGithub size={20} />
+          <FaCode size={15} />
         </a>
       </div>
     </div>
