@@ -145,58 +145,58 @@ export default function Project() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
       {filteredProjects.map((project) => (
-  <div 
-    key={project.name} 
-    className="relative rounded-md overflow-hidden shadow-md bg-gray-200 dark:bg-gray-800 transition-all duration-300"
-  >
-    {/* Contenedor de la imagen */}
-    <div className="relative">
-      <img 
-        src={project.img} 
-        alt={`Project ${project.name}`} 
-        className="w-full h-64 object-cover transition-transform duration-300"
-      />
+        <div 
+          key={project.name} 
+          className="relative  rounded-md overflow-hidden dark:bg-gray-800 transition-all duration-300"
+        >
+          {/* Contenedor de la imagen */}
+          <div className="relative ">
+            <img 
+              src={project.img} 
+              alt={`Project ${project.name}`} 
+              className="w-full h-64 object-cover transition-transform duration-300"
+            />
 
-      {/* Contenido que aparece en hover sobre la imagen */}
-      <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 to-gray-800/60 opacity-0 hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-300">
-        {/* Descripción */}
-        <p className="text-center mb-2 text-gray-200 dark:text-gray-300">{project.description}</p>
-        {/* Tecnologías */}
-        <div className="flex flex-wrap gap-2 justify-center">
-          {project.technologies.map((tech) => (
-            <span 
-              key={tech} 
-              className="bg-emerald-500/80 text-emerald-50 px-2 py-1 rounded text-xs"
-            >
-              {tech}
-            </span>
-          ))}
+            {/* Contenido que aparece en hover sobre la imagen */}
+            <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-300 ">
+              {/* Descripción */}
+              <p className="text-center mb-2 text-gray-200 dark:text-gray-300">{project.description}</p>
+              {/* Tecnologías */}
+              <div className="flex flex-wrap gap-2 justify-center">
+                {project.technologies.map((tech) => (
+                  <span 
+                    key={tech} 
+                    className="bg-emerald-500/80 text-emerald-50 px-2 py-1 rounded text-xs"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Contenedor para Título y Botones */}
+          <div className="flex justify-between items-center p-2 bg-gray-100/5 dark:bg-gray-950">
+            <h3 className="text-sm font-semibold text-gray-800 dark:text-white">{project.name}</h3>
+            <div className="flex gap-1">
+              <a 
+                href={project.liveDemo} 
+                className="w-7 h-7 flex items-center justify-center rounded-full bg-indigo-500 text-indigo-100 hover:bg-indigo-500/80 transition-colors"
+                aria-label="View Live Demo"
+              >
+                <FaRegEye size={15} />
+              </a>
+              <a 
+                href={project.githubLink} 
+                className="w-7 h-7  flex items-center justify-center rounded-full bg-indigo-500 text-indigo-100 hover:bg-indigo-500/80 transition-colors"
+                aria-label="View Source Code"
+              >
+                <FaCode size={15} />
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    {/* Contenedor para Título y Botones */}
-    <div className="flex justify-between items-center p-4 bg-transparent dark:bg-gray-950">
-      <h3 className="text-sm font-semibold text-gray-800 dark:text-white">{project.name}</h3>
-      <div className="flex gap-1">
-        <a 
-          href={project.liveDemo} 
-          className="w-7 h-7 flex items-center justify-center rounded-full bg-white hover:text-gray-500 text-gray-900 transition-colors"
-          aria-label="View Live Demo"
-        >
-          <FaRegEye size={15} />
-        </a>
-        <a 
-          href={project.githubLink} 
-          className="w-7 h-7  flex items-center justify-center rounded-full bg-white hover:text-gray-500 text-gray-900 transition-colors"
-          aria-label="View Source Code"
-        >
-          <FaCode size={15} />
-        </a>
-      </div>
-    </div>
-  </div>
-))}
+      ))}
 
 
 

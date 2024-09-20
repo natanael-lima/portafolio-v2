@@ -26,7 +26,7 @@ export default function Home() {
   }, [darkMode]);
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-950 text-slate-200' : 'bg-slate-200 text-slate-900'}`}>
+    <div className={`min-h-screen ${darkMode ? 'bg-gray-950 text-slate-200' : 'bg-white text-slate-900'}`}>
     <div className="mx-auto w-full px-4 sm:w-4/5 md:w-3/4 lg:w-3/5">
       {/* Agregar el elemento para el efecto de degradado*/}
       
