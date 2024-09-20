@@ -82,129 +82,51 @@ const projects = [
   }
 ];
 
-const frontendSkills = [
-  { name: 'HTML', icon: <FaHtml5 size={24} /> },
-  { name: 'CSS', icon: <FaCss3Alt size={24} /> },
-  { name: 'TypeScript', icon: <BiLogoTypescript size={24} /> },
-  { name: 'Angular', icon: <FaAngular size={24} /> },
-  { name: 'Bootstrap', icon: <FaBootstrap size={24} /> },
-  { name: 'WinForm', icon: <DiDotnet size={24} /> },
-  { name: 'WPF', icon: <DiDotnet size={24} /> },
-  { name: 'Thymeleaf', icon: <SiThymeleaf size={20} /> },
-]
 
-const backendSkills = [
-  { name: 'Java', icon: <FaJava size={24} /> },
-  { name: 'C#', icon: <SiCsharp size={24} /> },
-  { name: 'Spring', icon: <SiSpring size={24} /> },
-  { name: 'NodeJS', icon: <FaNodeJs size={24} /> },
-  { name: 'MySQL', icon: <GrMysql size={24} /> },
-  { name: 'MongoDB', icon: <SiMongodb size={24} /> },
-  { name: '.NET', icon: <AiOutlineDotNet size={24} /> },
-  { name: 'SQLServer', icon: <SiMicrosoftsqlserver size={24} /> },
-  { name: 'JWT', icon: <SiJsonwebtokens size={24} /> },
-]
 
 export default function Project() {
-  const [selectedTechnology, setSelectedTechnology] = useState('All')
 
-  const filteredProjects = selectedTechnology === 'All'
-    ? projects
-    : projects.filter(project => 
-        project.technologies.some(tech => tech === selectedTechnology)
-      );
 
   return (
-    <section id="portfolio" className="mb-12">
-       <h2 className="text-3xl font-bold mb-4 flex items-center justify-center lg:justify-start">
-              Projects <strong className="text-amber-400">.</strong>
-       </h2>
-      {/*<div className="bg-indigo-500 text-indigo-200 p-5   dark:bg-black dark:text-indigo-200">
-            asdasdasd
-      </div>*/}
-      <div className="mb-4">
-        <button
-          onClick={() => setSelectedTechnology('All')}
-          className={`mr-2 mb-2 px-4 py-2 rounded-full ${
-            selectedTechnology === 'All' ? 'bg-indigo-500 text-indigo-100 ' : 'text-indigo-100 bg-indigo-400/30  hover:bg-indigo-500/80'
-          }`}
-        >
-          All
-        </button>
-        {[...frontendSkills, ...backendSkills].map((skill, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedTechnology(skill.name)}
-            className={`mr-2 mb-2 px-4 py-2 rounded-full ${
-              selectedTechnology === skill.name ? 'bg-indigo-500 text-indigo-100' : 'text-indigo-100 bg-indigo-400/30 hover:bg-indigo-500/80'
-            }`}
-          >
-            {skill.name}
-          </button>
-        ))}
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-      {filteredProjects.map((project) => (
-        <div 
-          key={project.name} 
-          className="relative  rounded-md overflow-hidden dark:bg-gray-800 transition-all duration-300"
-        >
-          {/* Contenedor de la imagen */}
-          <div className="relative ">
+    <div className='p-2'>
+          <h2 className="text-xl font-bold text-white mb-4">Projects</h2>
+  
+        <div className="grid grid-cols-3 gap-4">
+          <div className="relative">
             <img 
-              src={project.img} 
-              alt={`Project ${project.name}`} 
-              className="w-full h-64 object-cover transition-transform duration-300"
+              src="https://i.postimg.cc/kD3mHVPw/portada-lovely-reponsive.png" 
+              alt="Project 1" 
+              className="rounded-md w-full" 
             />
-
-            {/* Contenido que aparece en hover sobre la imagen */}
-            <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-300 ">
-              {/* Descripción */}
-              <p className="text-center mb-2 text-gray-200 dark:text-gray-300">{project.description}</p>
-              {/* Tecnologías */}
-              <div className="flex flex-wrap gap-2 justify-center">
-                {project.technologies.map((tech) => (
-                  <span 
-                    key={tech} 
-                    className="bg-emerald-500/80 text-emerald-50 px-2 py-1 rounded text-xs"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-700 rounded-md"></div>
           </div>
 
-          {/* Contenedor para Título y Botones */}
-          <div className="flex justify-between items-center p-2 bg-gray-100/5 dark:bg-gray-950">
-            <h3 className="text-sm font-semibold text-gray-800 dark:text-white">{project.name}</h3>
-            <div className="flex gap-1">
-              <a 
-                href={project.liveDemo} 
-                className="w-7 h-7 flex items-center justify-center rounded-full bg-indigo-500 text-indigo-100 hover:bg-indigo-500/80 transition-colors"
-                aria-label="View Live Demo"
-              >
-                <FaRegEye size={15} />
-              </a>
-              <a 
-                href={project.githubLink} 
-                className="w-7 h-7  flex items-center justify-center rounded-full bg-indigo-500 text-indigo-100 hover:bg-indigo-500/80 transition-colors"
-                aria-label="View Source Code"
-              >
-                <FaCode size={15} />
-              </a>
-            </div>
+          <div className="relative">
+            <img 
+              src="https://i.postimg.cc/kD3mHVPw/portada-lovely-reponsive.png" 
+              alt="Project 2" 
+              className="rounded-md w-full" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-700 rounded-md"></div>
+          </div>
+
+          <div className="relative">
+            <img 
+              src="https://i.postimg.cc/kD3mHVPw/portada-lovely-reponsive.png" 
+              alt="Project 3" 
+              className="rounded-md w-full" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-700 rounded-md"></div>
           </div>
         </div>
-      ))}
-
-
-
-
-
-
-      </div>
-      
-    </section>
+        
+        {/* Ver más proyectos */}
+        <div className="flex justify-center mt-4">
+          <button className=" bg-gray-700 border border-gray-600/50 hover:bg-gray-600/70 text-gray-300 p-3 rounded-lg hover:bg-amber-600 transition">
+            See More Projects
+          </button>
+        </div>
+    </div>
+    
   )
 }

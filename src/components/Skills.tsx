@@ -1,12 +1,14 @@
-import React from 'react'
-import { FaHtml5, FaCss3Alt, FaGithub , FaAngular, FaBootstrap, FaGitAlt, FaJava,FaNodeJs   } from "react-icons/fa";
-import { SiMongodb, SiSpring, SiPostman,SiCsharp,SiThymeleaf,SiMicrosoftsqlserver,SiJsonwebtokens,SiCoreldraw,SiAdobephotoshop,SiDocker  } from "react-icons/si";
+import React from 'react';
+import { FaHtml5, FaCss3Alt, FaGithub, FaAngular, FaBootstrap, FaGitAlt, FaJava, FaNodeJs } from "react-icons/fa";
+import {  SiSpring, SiPostman, SiCsharp,  SiMicrosoftsqlserver, SiCoreldraw, SiAdobephotoshop, SiDocker, SiThymeleaf, SiJsonwebtokens, SiMongodb } from "react-icons/si";
 import { DiDotnet, DiScrum } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
 import { AiOutlineDotNet } from "react-icons/ai";
 import { BiLogoTypescript } from "react-icons/bi";
 
+
 export default function Skills() {
+
   const frontendSkills = [
     { name: 'HTML', icon: <FaHtml5 size={24} /> },
     { name: 'CSS', icon: <FaCss3Alt size={24} /> },
@@ -38,73 +40,41 @@ export default function Skills() {
     { name: 'GitHub', icon: <FaGithub size={24} /> },
     { name: 'Postman', icon: <SiPostman size={24} /> },
   ];
-    
-      return (
-        <section id="skills" className="mb-12">
-            <h2 className="text-3xl font-bold mb-4 flex items-center justify-center lg:justify-start">
-              Skills <strong className="text-amber-400">.</strong>
-            </h2>
-          
-            <div className="space-y-6">
-              {/* Frontend Development */}
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-2">Frontend Development</h3>
-                  <div className="flex flex-wrap gap-4">
-                    {frontendSkills.map((skill) => (
-                        <div 
-                          key={skill.name}
-                          className="flex items-center rounded-md px-4 py-2 shadow-md bg-gray-300 dark:text-emerald-50 dark:bg-emerald-500/90">
-                          {skill.icon}
-                          <span className="font-semibold text-sm ml-1">{skill.name}</span>
-                        </div>
-                    ))}
-                  </div>
-                </div>
 
-              {/* Backend Development */}
-              <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-2">Backend Development</h3>
-                  <div className="flex flex-wrap gap-4">
-                    {backendSkills.map((skill, index) => (
-                      <div key={index} className="flex items-center bg-gray-300 dark:text-emerald-50 dark:bg-emerald-500/90 rounded-md px-4 py-2 shadow-md">
-                        {skill.icon}
-                        <span className="font-semibold text-sm ml-1">{skill.name}</span>
-                      </div>
-                    ))}
-                  </div>
-              </div>
-              {/* Extras */}
-              <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-2">Backend Development</h3>
-                  <div className="flex flex-wrap gap-4">
-                    {extraSkills.map((skill, index) => (
-                      <div key={index} className="flex items-center dark:text-emerald-50 dark:bg-emerald-500/90 rounded-md px-4 py-2 shadow-md">
-                        {skill.icon}
-                        <span className="font-semibold text-sm ml-1">{skill.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              
-            </div>
-          </section>
 
-     );
+  return (
+    <div className="p-4 rounded-md">
+    <h2 className="text-xl font-bold text-white mb-4">Skills</h2>
+
+    <h3 className="text-lg font-semibold text-gray-300 mb-2">Frontend Skills</h3>
+    <div className="grid grid-cols-4 gap-2 mb-4">
+      {frontendSkills.map((skill) => (
+        <div key={skill.name} className="border border-gray-600/50 rounded-lg px-1 py-2 flex items-center space-x-2 text-gray-300 text-md">
+          <div className='bg-gray-600 text-gray-200 p-1 rounded-lg'>{skill.icon}</div>
+          <span className="text-gray-300 text-md">{skill.name}</span>
+        </div>
+      ))}
+    </div>
+
+    <h3 className="text-lg font-semibold text-gray-300 mb-2">Backend Skills</h3>
+    <div className="grid grid-cols-4 gap-2 mb-4">
+      {backendSkills.map((skill) => (
+        <div key={skill.name} className="border border-gray-600/50 rounded-lg px-1 py-2 flex items-center space-x-2 text-gray-300 text-md">
+          <div className='bg-gray-600 text-gray-200 p-1 rounded-lg'>{skill.icon}</div>
+          <span className="text-gray-300 text-md">{skill.name}</span>
+        </div>
+      ))}
+    </div>
+
+    <h3 className="text-lg font-semibold text-gray-300 mb-2">Extra Skills</h3>
+    <div className="grid grid-cols-4 gap-2">
+      {extraSkills.map((skill) => (
+        <div key={skill.name} className="border border-gray-600/50 rounded-lg px-1 py-2 flex items-center space-x-2 text-gray-300 text-md">
+          <div className='bg-gray-600 text-gray-200 p-1 rounded-lg'>{skill.icon}</div>
+          <span className="text-gray-300 text-md">{skill.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+  );
 }
-{/*
-  <div className="p-3 lg:p-0 w-full">
-                <h3 className="text-xl font-semibold mb-3">Extras</h3>
-                <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-4">
-                  {extraSkills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className={`rounded-md flex flex-col items-center px-6 py-6 text-center ${
-                        darkMode ? 'dark:bg-slate-800' : 'dark:bg-slate-300'
-                      }`}
-                    >
-                      {skill.icon}
-                      <span className="mt-2 font-semibold text-sm">{skill.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>*/}

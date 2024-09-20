@@ -1,67 +1,92 @@
+import React from 'react';
+import { FaCode, FaGraduationCap, FaUserTie } from 'react-icons/fa';
+import { TbPointFilled } from "react-icons/tb";
+import { TiLocation } from "react-icons/ti";
+import { FaFileArrowDown } from "react-icons/fa6";
+import { RiTeamFill } from "react-icons/ri";
 
-import React from 'react'
-import { FaGithub,FaLinkedin, } from "react-icons/fa";
-import { BsWhatsapp } from "react-icons/bs";
-import { MdArrowOutward } from "react-icons/md";
-import { BiSolidFilePdf } from "react-icons/bi";
-interface ModeProps {
-  darkMode: boolean;
-}
-
-export default function About({ darkMode }:ModeProps) {
-
+export default function About() {
   return (
-    <section id="about" className="mb-12">
-  <h2 className="text-3xl font-bold mb-4 flex items-center justify-center lg:justify-start">About Me<strong className='text-amber-400'>.</strong></h2>
-  
-  <div className="flex flex-col items-center gap-4">
-    {/* Imagen del perfil */}
-    <div className="flex flex-col items-center">
-      <img 
-        src="https://i.postimg.cc/d318QCJZ/me4.webp"
-        alt="Profile"
-        className="w-24 h-24 rounded-full object-cover mb-2"
-      />
-      <p className="text-sm font-semibold text-slate-500">Software Developer</p>
+    <div className="bg-neutral-900 p-3 rounded-md relative shadow-lg">
+      {/* Botón de descargar CV en la esquina superior derecha */}
+      <div className="absolute top-2 right-4"> 
+        <button className="bg-neutral-800 hover:bg-neutral-700 p-2 rounded-lg transition">
+          <FaFileArrowDown className="text-white text-2xl" />
+        </button>
+      </div>
+
+      {/* Contenedor de imagen e información */}
+      <div className="flex items-center mb-6">
+        {/* Imagen de perfil */}
+        <img
+          src="https://i.postimg.cc/Gt5v4pp7/me5.webp"
+          alt="Profile"
+          className="w-28 h-28 rounded-lg object-cover"
+        />
+
+        {/* Información al lado de la imagen */}
+        <div className="ml-6 flex flex-col justify-between">
+          {/* Disponibilidad */}
+          <span className="bg-neutral-800 rounded-full text-neutral-300 font-md flex items-center px-3 py-1">
+            <TbPointFilled className="text-sm text-green-500" /> Available for work
+          </span>
+
+          {/* Nombre */}
+          <h2 className="text-2xl font-bold text-white">Natanael Lima</h2>
+
+          {/* Descripción de trabajo */}
+          <p className="text-lg text-neutral-300">Programmer Analyst</p>
+        </div>
+      </div>
+      {/* Etiquetas de información adicional */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {/* Tags con íconos y texto */}
+        <span className="bg-neutral-800 text-neutral-300 border border-neutral-700/50 rounded-full px-3 py-1 text-sm flex items-center">
+          <TiLocation className="mr-1" /> Argentina
+        </span>
+        <span className="bg-neutral-800 text-neutral-300 border border-neutral-700/50 rounded-full px-3 py-1 text-sm flex items-center">
+          <FaGraduationCap className="mr-1" /> University Graduate
+        </span>
+        <span className="bg-neutral-800 text-neutral-300 border border-neutral-700/50 rounded-full px-3 py-1 text-sm flex items-center">
+          <FaUserTie className="mr-1" /> Software Developer
+        </span>
+        <span className="bg-neutral-800 text-neutral-300 border border-neutral-700/50 rounded-full px-3 py-1 text-sm flex items-center">
+          <FaCode className="mr-1" /> Full Stack Developer
+        </span>
+        <span className="bg-neutral-800 text-neutral-300 border border-neutral-700/50 rounded-full px-3 py-1 text-sm flex items-center">
+          <RiTeamFill className="mr-1" /> Team Player
+        </span>
+        
+        
+      </div>
+
+      {/* Botones de contacto
+      <div className="flex gap-4">
+        <a
+          href="https://www.linkedin.com/in/your-profile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 bg-neutral-800 hover:bg-neutral-700 p-3 text-neutral-300 rounded-lg flex justify-center items-center transition"
+        >
+          LinkedIn <FaLinkedin className="ml-1 text-xl" />
+        </a>
+        <a
+          href="https://github.com/your-profile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 p-3 rounded-lg flex justify-center items-center transition"
+        >
+          GitHub <FaGithub className="ml-1 text-xl" />
+        </a>
+        <a
+          href="mailto:your-email@example.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 p-3 rounded-lg flex justify-center items-center transition"
+        >
+          Mail <MdMail className="ml-1 text-xl" />
+        </a>
+      </div> */}
     </div>
-
-    {/* Descripción resumida */}
-    <div className="text-center px-4">
-      <p className="text-sm mb-2">
-        Hi, I m Natanael, a developer from Jujuy, Argentina. I focus on web and desktop app development with a passion for solving problems efficiently.
-      </p>
-      <p className="text-sm">
-        I love building adaptable software and working with teams to push projects forward.
-      </p>
-    </div>
-
-    {/* Botón de Available to Work */}
-    <a
-      href="https://www.linkedin.com/in/natanael-ever-lima-gutierrez-9bb695259/"
-      className={`mt-4 rounded-full px-4 py-2 border-2 flex items-center justify-center ${darkMode ? 'border-amber-500 hover:bg-amber-500 text-amber-500 hover:text-white' : 'border-slate-600 hover:bg-slate-800 text-slate-600 hover:text-white'}`}
-    >
-      Available To Work
-      <MdArrowOutward size={20} className="ml-2" />
-    </a>
-
-    {/* Iconos de redes sociales */}
-    <div className="flex space-x-3 mt-5">
-      <a href="https://www.linkedin.com/in/natanael-ever-lima-gutierrez-9bb695259/" target="_blank" rel="noopener noreferrer">
-        <FaLinkedin size={24} className="hover:scale-110 transition-colors duration-300 hover:text-amber-400" />
-      </a>
-      <a href="https://github.com/natanael-lima" target="_blank" rel="noopener noreferrer">
-        <FaGithub size={24} className="hover:scale-110 transition-colors duration-300 hover:text-amber-400" />
-      </a>
-      <a href="https://api.whatsapp.com/send?phone=5493884670317">
-        <BsWhatsapp size={24} className="hover:scale-110 transition-colors duration-300 hover:text-amber-400" />
-      </a>
-      <a href="/CV.pdf" download="CV-LIMA-NATANAEL.pdf">
-        <BiSolidFilePdf size={24} className="hover:scale-110 transition-colors duration-300 hover:text-amber-400" />
-      </a>
-    </div>
-  </div>
-</section>
-
   );
 }
-
