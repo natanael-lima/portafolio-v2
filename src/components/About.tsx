@@ -28,7 +28,7 @@ export default function About({ darkMode }:ModeProps) {
     {/* Descripción resumida */}
     <div className="text-center px-4">
       <p className="text-sm mb-2">
-        Hi, I'm Natanael, a developer from Jujuy, Argentina. I focus on web and desktop app development with a passion for solving problems efficiently.
+        Hi, I m Natanael, a developer from Jujuy, Argentina. I focus on web and desktop app development with a passion for solving problems efficiently.
       </p>
       <p className="text-sm">
         I love building adaptable software and working with teams to push projects forward.
