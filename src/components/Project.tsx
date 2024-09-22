@@ -1,10 +1,4 @@
-import React, { useState } from 'react'
-import { FaHtml5, FaCss3Alt, FaAngular, FaBootstrap, FaJava, FaNodeJs } from 'react-icons/fa'
-import { BiLogoTypescript } from 'react-icons/bi'
-import { DiDotnet } from 'react-icons/di'
-import { SiThymeleaf, SiCsharp, SiSpring, SiMongodb, SiMicrosoftsqlserver, SiJsonwebtokens } from 'react-icons/si'
-import { GrMysql } from 'react-icons/gr'
-import { AiOutlineDotNet } from 'react-icons/ai'
+import React from 'react'
 import { FaRegEye } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 const projects = [
@@ -88,45 +82,52 @@ export default function Project() {
 
 
   return (
-    <div className='p-2'>
-          <h2 className="text-xl font-bold text-white mb-4">Projects</h2>
-  
-        <div className="grid grid-cols-3 gap-4">
-          <div className="relative">
-            <img 
-              src="https://i.postimg.cc/kD3mHVPw/portada-lovely-reponsive.png" 
-              alt="Project 1" 
-              className="rounded-md w-full" 
+     
+    <div className="grid grid-cols-12 gap-4">
+    {projects.map((project, index) => (
+      <div
+        key={index}
+        className={`col-span-12 ${index % 2 === 0 ? 'md:col-span-8' : 'md:col-span-4'} grid grid-rows-1 gap-4`}
+      >
+        <section className="bg-neutral-800/30 rounded-3xl border border-neutral-700/50">
+          <div className="relative group overflow-hidden rounded-3xl">
+            {/* Imagen del proyecto */}
+            <img
+              src={project.img}
+              alt={project.name}
+              className="w-full h-64 object-cover transition-opacity duration-300 group-hover:opacity-25 opacity-80"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-700 rounded-md"></div>
-          </div>
 
-          <div className="relative">
-            <img 
-              src="https://i.postimg.cc/kD3mHVPw/portada-lovely-reponsive.png" 
-              alt="Project 2" 
-              className="rounded-md w-full" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-700 rounded-md"></div>
+            {/* Contenedor de botones y título */}
+            <div className="absolute inset-0 flex items-end p-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+              <div className="w-full flex justify-between items-center">
+                <h3 className="text-white text-lg font-semibold">{project.name}</h3>
+                <div className="flex gap-2">
+                  <a
+                    href={project.liveDemo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-black p-2 rounded-full hover:bg-gray-200 transition"
+                    aria-label="View Project"
+                  >
+                    <FaRegEye className="text-xl" />
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-black p-2 rounded-full hover:bg-gray-200 transition"
+                    aria-label="View Code"
+                  >
+                    <FaCode className="text-xl" />
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div className="relative">
-            <img 
-              src="https://i.postimg.cc/kD3mHVPw/portada-lovely-reponsive.png" 
-              alt="Project 3" 
-              className="rounded-md w-full" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-gray-700 rounded-md"></div>
-          </div>
-        </div>
-        
-        {/* Ver más proyectos */}
-        <div className="flex justify-center mt-4">
-          <button className=" bg-gray-700 border border-gray-600/50 hover:bg-gray-600/70 text-gray-300 p-3 rounded-lg hover:bg-amber-600 transition">
-            See More Projects
-          </button>
-        </div>
-    </div>
-    
+        </section>
+      </div>
+    ))}
+  </div>
   )
 }

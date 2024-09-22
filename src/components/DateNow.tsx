@@ -30,22 +30,18 @@ export default function DateNow() {
   });
 
   return (
-    <div className="flex items-center justify-center space-x-6">
-      
+    <div className="flex items-center justify-center space-x-4">
       {/* Contenedor de la fecha */}
-      <section className="flex flex-col items-center p-6 rounded-lg px-4">
-        <FaCalendarDay className="text-gray-200 text-2xl mb-2" />
-        <time className="text-gray-50 text-lg font-semibold" dateTime={currentDate.toISOString()}>
+      <section className="flex flex-col items-center rounded-lg px-4">
+        <FaCalendarDay className="text-white text-2xl mb-2" />
+        <time className="text-white text-md font-semibold" dateTime={currentDate.toISOString()}>
           {formattedDate}
         </time>
       </section>
-
-     
-
       {/* Contenedor de la hora */}
-      <section className="flex flex-col items-center p-6 rounded-lg px-3">
-        <FaHourglass className="text-gray-200 text-2xl mb-2" />
-        <time className="text-gray-50 text-lg font-semibold" dateTime={currentDate.toISOString()}>
+      <section className="flex flex-col items-center rounded-lg px-4">
+        <FaHourglass className="text-white text-2xl mb-2" />
+        <time className="text-white text-md font-semibold" dateTime={currentDate.toISOString()}>
           {formattedTime}
         </time>
       </section>
