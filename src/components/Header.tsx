@@ -1,10 +1,6 @@
 'use client'
 import { Moon, Sun } from 'lucide-react';
 import React from 'react'
-import { BiSolidFilePdf } from 'react-icons/bi';
-import { BsWhatsapp } from 'react-icons/bs';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-
 interface HeaderProps {
   darkMode: boolean;
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
