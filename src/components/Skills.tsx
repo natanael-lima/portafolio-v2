@@ -41,53 +41,60 @@ export default function Skills() {
     
       return (
         <section id="skills" className="mb-12">
-            <h2 className="text-3xl font-bold mb-4 flex items-center justify-center lg:justify-start">
-              Skills <strong className="text-amber-400">.</strong>
-            </h2>
-          
-            <div className="space-y-6">
-              {/* Frontend Development */}
-                <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-2">Frontend Development</h3>
-                  <div className="flex flex-wrap gap-4">
-                    {frontendSkills.map((skill) => (
-                        <div 
-                          key={skill.name}
-                          className="flex items-center rounded-md px-4 py-2 shadow-md bg-gray-300 dark:text-emerald-50 dark:bg-emerald-500/90">
-                          {skill.icon}
-                          <span className="font-semibold text-sm ml-1">{skill.name}</span>
-                        </div>
-                    ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Frontend Development */}
+          <div className="col-span-1">
+            <h3 className="text-3xl font-md mb-2 mt-12 text-center">Frontend Development</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+              {frontendSkills.map((skill) => (
+                <div 
+                  key={skill.name} 
+                  className="flex items-center rounded-md px-4 py-1">
+                  <div className="bg-lime-950/10 p-2 rounded-md text-neutral-800/90">
+                    {skill.icon}
                   </div>
+                  <span className="font-semibold text-sm ml-2">{skill.name}</span>
                 </div>
-
-              {/* Backend Development */}
-              <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-2">Backend Development</h3>
-                  <div className="flex flex-wrap gap-4">
-                    {backendSkills.map((skill, index) => (
-                      <div key={index} className="flex items-center bg-gray-300 dark:text-emerald-50 dark:bg-emerald-500/90 rounded-md px-4 py-2 shadow-md">
-                        {skill.icon}
-                        <span className="font-semibold text-sm ml-1">{skill.name}</span>
-                      </div>
-                    ))}
-                  </div>
-              </div>
-              {/* Extras */}
-              <div className="mb-8">
-                  <h3 className="text-xl font-semibold mb-2">Backend Development</h3>
-                  <div className="flex flex-wrap gap-4">
-                    {extraSkills.map((skill, index) => (
-                      <div key={index} className="flex items-center dark:text-emerald-50 dark:bg-emerald-500/90 rounded-md px-4 py-2 shadow-md">
-                        {skill.icon}
-                        <span className="font-semibold text-sm ml-1">{skill.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              
+              ))}
             </div>
-          </section>
+          </div>
+      
+          {/* Backend Development */}
+          <div className="col-span-1">
+            <h3 className="text-3xl font-md mb-2 mt-12 text-center">Backend Development</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+              {backendSkills.map((skill, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-center rounded-md px-4 py-1">
+                  <div className="bg-lime-950/10 p-2 rounded-md text-neutral-800/90">
+                    {skill.icon}
+                  </div>
+                  <span className="font-semibold text-sm ml-2">{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+      
+          {/* Extra Skills */}
+          <div className="col-span-1">
+            <h3 className="text-3xl font-md mb-2 mt-12 text-center">Extra Skills</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
+              {extraSkills.map((skill, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-center rounded-md px-4 py-1">
+                  <div className="bg-lime-950/10 p-2 rounded-md text-neutral-800/90">
+                    {skill.icon}
+                  </div>
+                  <span className="font-semibold text-sm ml-2">{skill.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+      
 
      );
 }

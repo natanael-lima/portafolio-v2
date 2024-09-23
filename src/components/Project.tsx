@@ -5,8 +5,6 @@ import { DiDotnet } from 'react-icons/di'
 import { SiThymeleaf, SiCsharp, SiSpring, SiMongodb, SiMicrosoftsqlserver, SiJsonwebtokens } from 'react-icons/si'
 import { GrMysql } from 'react-icons/gr'
 import { AiOutlineDotNet } from 'react-icons/ai'
-import { FaRegEye } from "react-icons/fa";
-import { FaCode } from "react-icons/fa";
 const projects = [
   {
     name: 'Parking System Management',
@@ -116,17 +114,12 @@ export default function Project() {
 
   return (
     <section id="portfolio" className="mb-12">
-       <h2 className="text-3xl font-bold mb-4 flex items-center justify-center lg:justify-start">
-              Projects <strong className="text-amber-400">.</strong>
-       </h2>
-      {/*<div className="bg-indigo-500 text-indigo-200 p-5   dark:bg-black dark:text-indigo-200">
-            asdasdasd
-      </div>*/}
+       <h3 className="text-3xl font-md mb-2 mt-12 text-center">Projects</h3>
       <div className="mb-4">
         <button
           onClick={() => setSelectedTechnology('All')}
           className={`mr-2 mb-2 px-4 py-2 rounded-full ${
-            selectedTechnology === 'All' ? 'bg-indigo-500 text-indigo-100 ' : 'text-indigo-100 bg-indigo-400/30  hover:bg-indigo-500/80'
+            selectedTechnology === 'All' ? 'bg-neutral-400/50 text-neutral-700' : 'text-neutral-800 bg-neutral-400/20 hover:bg-neutral-500/30'
           }`}
         >
           All
@@ -136,7 +129,7 @@ export default function Project() {
             key={index}
             onClick={() => setSelectedTechnology(skill.name)}
             className={`mr-2 mb-2 px-4 py-2 rounded-full ${
-              selectedTechnology === skill.name ? 'bg-indigo-500 text-indigo-100' : 'text-indigo-100 bg-indigo-400/30 hover:bg-indigo-500/80'
+              selectedTechnology === skill.name ? 'bg-neutral-400/50 text-neutral-700' : 'text-neutral-800 bg-neutral-400/20 hover:bg-neutral-500/30'
             }`}
           >
             {skill.name}
@@ -145,66 +138,58 @@ export default function Project() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
       {filteredProjects.map((project) => (
-        <div 
-          key={project.name} 
-          className="relative  rounded-md overflow-hidden dark:bg-gray-800 transition-all duration-300"
-        >
-          {/* Contenedor de la imagen */}
-          <div className="relative ">
-            <img 
-              src={project.img} 
-              alt={`Project ${project.name}`} 
-              className="w-full h-64 object-cover transition-transform duration-300"
-            />
+      <div 
+        key={project.name} 
+        className="relative bg-neutral-50 rounded-lg p-2 overflow-hidden shadow-md transition-all duration-300 dark:bg-gray-800 group hover:bg-neutral-100"
+      >
+        {/* Contenedor de la imagen con padding */}
+        <div className="relative p-2">
+          <img 
+            src={project.img} 
+            alt={`Project ${project.name}`} 
+            className="w-full h-48 object-cover rounded-lg transition-transform duration-300"
+          />
 
-            {/* Contenido que aparece en hover sobre la imagen */}
-            <div className="absolute inset-0 bg-black/70 opacity-0 hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-300 ">
-              {/* Descripción */}
-              <p className="text-center mb-2 text-gray-200 dark:text-gray-300">{project.description}</p>
-              {/* Tecnologías */}
-              <div className="flex flex-wrap gap-2 justify-center">
-                {project.technologies.map((tech) => (
-                  <span 
-                    key={tech} 
-                    className="bg-emerald-500/80 text-emerald-50 px-2 py-1 rounded text-xs"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Contenedor para Título y Botones */}
-          <div className="flex justify-between items-center p-2 bg-gray-100/5 dark:bg-gray-950">
-            <h3 className="text-sm font-semibold text-gray-800 dark:text-white">{project.name}</h3>
-            <div className="flex gap-1">
-              <a 
-                href={project.liveDemo} 
-                className="w-7 h-7 flex items-center justify-center rounded-full bg-indigo-500 text-indigo-100 hover:bg-indigo-500/80 transition-colors"
-                aria-label="View Live Demo"
+          {/* Tecnologías sobre la imagen */}
+          <div className="p-2 flex flex-wrap gap-1 justify-start">
+            {project.technologies.map((tech) => (
+              <span 
+                key={tech} 
+                className="border border-lime-950/10 bg-lime-900/20 text-lime-900 px-1 py-0.5 rounded text-xs"
               >
-                <FaRegEye size={15} />
-              </a>
-              <a 
-                href={project.githubLink} 
-                className="w-7 h-7  flex items-center justify-center rounded-full bg-indigo-500 text-indigo-100 hover:bg-indigo-500/80 transition-colors"
-                aria-label="View Source Code"
-              >
-                <FaCode size={15} />
-              </a>
-            </div>
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
-      ))}
+        {/* Contenedor para el Título, Descripción y Tecnologías */}
+        <div className="p-2">
+          {/* Título */}
+          <h3 className="text-sm font-semibold text-gray-800 dark:text-white mb-1">{project.name}</h3>
 
+          {/* Descripción */}
+          <p className="text-xs text-gray-600 dark:text-neutral-400 mb-2">{project.description}</p>
 
-
-
-
+          {/* Botones que solo aparecen en hover sobre el contenedor general */}
+          <div className="flex gap-2 justify-start mt-2  ">
+            <a 
+              href={project.liveDemo} 
+              className="text-sm font-medium px-3 py-2 rounded-lg bg-neutral-800 text-white hover:bg-neutral-600 transition-colors"
+            >
+              Live Demo
+            </a>
+            <a 
+              href={project.githubLink} 
+              className="text-sm font-medium px-3 py-2 rounded-lg bg-neutral-800 text-white hover:bg-neutral-600 transition-colors"
+            >
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
 
       </div>
-      
     </section>
   )
 }
