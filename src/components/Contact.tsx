@@ -2,62 +2,104 @@ import React from 'react';
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { RiMailFill } from "react-icons/ri";
 import { FaGitlab } from "react-icons/fa6";
-import { FaBehanceSquare } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div className="p-3">
-      <h2 className="text-white text-2xl font-bold mb-4">Contact</h2>
-      <div className="grid grid-cols-3 gap-2">
-        <a
-          href="https://www.linkedin.com/in/tu-perfil"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center bg-orange-600 hover:bg-orange-700 transition-colors duration-300 px-6 py-3 rounded-md text-gray-100"
-        >
-          <span className="mr-2"><FaLinkedin size={24} /></span> Linkedin
-        </a>
-        <a
-          href="https://github.com/tu-perfil"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center bg-orange-600 hover:bg-orange-700 transition-colors duration-300 px-6 py-3 rounded-md text-gray-100"
-        >
-          <span className="mr-2"><FaGithub size={24} /></span> Github
-        </a>
-        <a
-          href="mailto:tu-email@ejemplo.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center bg-orange-600 hover:bg-orange-700 transition-colors duration-300 px-6 py-3 rounded-md text-gray-100"
-        >
-          <span className="mr-2"><RiMailFill size={24} /></span> Mail
-        </a>
-        <a
-          href="https://wa.me/+1234567890"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center bg-orange-600 hover:bg-orange-700 transition-colors duration-300 px-6 py-3 rounded-md text-gray-100"
-        >
-          <span className="mr-2"><FaWhatsapp size={24} /></span> WhatsApp
-        </a>
-        <a
-          href="https://wa.me/+1234567890"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center bg-orange-600 hover:bg-orange-700 transition-colors duration-300 px-6 py-3 rounded-md text-gray-100"
-        >
-          <span className="mr-2"><FaGitlab size={24} /></span> Gitlab
-        </a>
-        <a
-          href="https://wa.me/+1234567890"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center justify-center bg-orange-600 hover:bg-orange-700 transition-colors duration-300 px-6 py-3 rounded-md text-gray-100"
-        >
-          <span className="mr-2"><FaBehanceSquare size={24} /></span> Behance
-        </a>
+    <article className="">
+      <h2 className="text-white text-3xl font-bold mb-4">Contact</h2>
+      <div className="grid grid-cols-1 gap-3">
+        <div className="flex items-center">
+          <a
+            href="https://www.linkedin.com/in/natanael-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center bg-neutral-800 hover:bg-neutral-700 p-2 text-neutral-300 rounded-lg transition-colors duration-300 p-3 rounded-lg mr-2"
+          >
+            <FaLinkedin size={24} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/natanael-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-100 hover:underline"
+          >
+            linkedin/natanael-dev
+          </a>
+        </div>
+        <div className="flex items-center">
+          <a
+            href="https://github.com/natanael-lima"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center bg-neutral-800 hover:bg-neutral-700 p-2 text-neutral-300 rounded-lg transition-colors duration-300 p-3 rounded-lg mr-2"
+          >
+            <FaGithub size={24} />
+          </a>
+          <a
+            href="https://github.com/natanael-lima"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-100 hover:underline"
+          >
+            github/natanael-lima
+          </a>
+        </div>
+        <div className="flex items-center">
+          <a
+            href="mailto:natanaelsys@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center bg-neutral-800 hover:bg-neutral-700 p-2 text-neutral-300 rounded-lg transition-colors duration-300 p-3 rounded-lg mr-2"
+          >
+            <RiMailFill size={24} />
+          </a>
+          <a
+            href="mailto:natanaelsys@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-100 hover:underline"
+          >
+            mail/natanaelsys@gmail.com
+          </a>
+        </div>
+        <div className="flex items-center">
+          <a
+            href="https://wa.me/+5493884670317"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center bg-neutral-800 hover:bg-neutral-700 p-2 text-neutral-300 rounded-lg transition-colors duration-300 p-3 rounded-lg mr-2"
+          >
+            <FaWhatsapp size={24} />
+          </a>
+          <a
+            href="https://wa.me/+5493884670317"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-100 hover:underline"
+          >
+            whatsapp
+          </a>
+        </div>
+        <div className="flex items-center">
+          <a
+            href="https://gitlab.com/natanael-lima"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center bg-neutral-800 hover:bg-neutral-700 p-2 text-neutral-300 rounded-lg transition-colors duration-300 p-3 rounded-lg mr-2"
+          >
+            <FaGitlab size={24} />
+          </a>
+          <a
+            href="https://gitlab.com/natanael-lima"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-100 hover:underline"
+          >
+            gitlab/natanael-lima
+          </a>
+        </div>
       </div>
-    </div>
+    </article>
+  
   );
 }

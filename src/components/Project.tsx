@@ -73,12 +73,12 @@ export default function Project() {
           {projects.map((project, index) => (
             <div key={index} className="col-span-12 md:col-span-6 lg:col-span-4">
               <section className="bg-neutral-800/30 rounded-3xl border border-neutral-700/50 p-4">
-                <div className="relative group overflow-hidden rounded-3xl">
+                <div className="relative group overflow-hidden rounded-lg">
                   {/* Imagen del proyecto */}
                   <img
                     src={project.img}
                     alt={project.name}
-                    className="w-full h-64 object-cover transition-opacity duration-300 group-hover:opacity-25 opacity-80"
+                    className="w-full h-64 object-cover transition-opacity duration-300 group-hover:opacity-50 opacity-80"
                   />
                   {/* Contenedor de botones y título */}
                   <div className="absolute inset-0 flex items-end p-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100">

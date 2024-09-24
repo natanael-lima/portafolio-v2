@@ -8,6 +8,7 @@ import Profile from "@/components/Profile";
 import DateNow from "@/components/DateNow";
 import About from "@/components/About";
 import ProjectCard from "@/components/ProjectCard";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -48,9 +49,13 @@ export default function Home() {
     
       {/* Segunda fila */}
       <section className="col-span-12 grid grid-cols-12 gap-4">
-        <div className="col-span-12 md:col-span-12 grid grid-rows-1 gap-4">
+        <aside className="col-span-12 md:col-span-9 grid grid-rows-1 gap-4">
           <Skills/>
-        </div>
+        </aside>
+        <aside className="bg-neutral-800/30 p-6 rounded-3xl border border-neutral-700/50 col-span-12 md:col-span-3 grid grid-rows-1 gap-4">
+            {/* Descripción personal */}
+            <Contact/>
+        </aside>
       </section>
 
       {/* Tercera fila 

@@ -59,7 +59,7 @@ export default function About() {
       </div>
 
       {/* Botones de contacto*/}
-      <div className="flex gap-4">
+      <div className="flex flex-wrap gap-2 mb-1">
         <a
           href="https://www.linkedin.com/in/your-profile"
           target="_blank"
@@ -72,7 +72,7 @@ export default function About() {
           href="https://github.com/your-profile"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 p-3 rounded-lg flex justify-center items-center transition"
+          className="flex-1  bg-neutral-800 hover:bg-neutral-700 p-3 text-neutral-300 rounded-lg flex justify-center items-center transition"
         >
           GitHub <FaGithub className="ml-1 text-xl" />
         </a>

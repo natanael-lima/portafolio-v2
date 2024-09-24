@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer'
-import Profile from '@/components/Profile'
 import Project from '@/components/Project'
+import ViewProfile from '@/components/ViewProfile'
 import React from 'react'
 
 export default function page() {
@@ -15,18 +15,22 @@ export default function page() {
             {/* Columna 1: Regresar al perfil */}
             <div className="col-span-12 md:col-span-4 flex flex-col gap-4">
               <aside className="bg-neutral-800/30 p-6 rounded-3xl flex flex-col justify-center items-center border border-neutral-700/50">
-                <Profile />
-                <button className="mt-2 flex-1 bg-neutral-800 hover:bg-neutral-700 p-3 text-neutral-300 rounded-lg flex justify-center items-center transition">
-                  <a href="/">View More Profile</a>
-                </button>
+                <ViewProfile />
               </aside>
             </div>
-
-            {/* Columna 2: Proyectos */}
+              {/* Columna 2: Regresar al perfil */}
             <div className="col-span-12 md:col-span-8 flex flex-col gap-4">
-              <h2 className="text-white text-3xl font-bold mb-4">My Projects</h2>
-              <Project/>
+              <aside className="bg-neutral-800/30 p-6 rounded-3xl flex flex-col justify-center items-center border border-neutral-700/50 h-full">
+                  <h2 className="text-neutral-100 text-3xl font-bold">My Projects</h2>
+              </aside>
             </div>
+          </section>
+          {/* Segunda fila: Proyectos */}
+          <section className="col-span-12 grid grid-cols-12 gap-4">
+                  {/* Columna 3x3: Proyectos */}
+                  <article className="col-span-12 md:col-span-12 flex flex-col gap-4">
+                    <Project/>
+                  </article>
           </section>
         </main>
         {/* Footer */}
