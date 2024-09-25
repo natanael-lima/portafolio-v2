@@ -168,7 +168,7 @@ export default function Project() {
       <a
         key={project.title}
         href={project.demoLink}
-        className="relative bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 shadow-md transition-all duration-300 group hover:bg-neutral-100 dark:hover:bg-neutral-700 flex"
+        className="relative rounded-lg p-4 hover:shadow-md transition-all duration-300 group hover:bg-neutral-50 dark:hover:bg-neutral-800 flex"
         style={{ display: 'flex', alignItems: 'flex-start' }}
       >
         {/* Columna de la imagen (30%) */}
@@ -220,7 +220,7 @@ export default function Project() {
             {project.technologies.map((tech) => (
               <span 
                 key={tech} 
-                className="bg-lime-400/25 text-lime-600/70 px-1 py-0.5 rounded-full text-xs font-normal"
+                className="bg-lime-500/20 text-lime-600/90 px-1.5 py-0.5 rounded-full text-xs font-normal dark:bg-lime-500/10 dark:text-lime-300/60"
               >
                 {tech}
               </span>
