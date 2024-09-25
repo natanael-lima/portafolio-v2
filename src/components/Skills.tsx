@@ -50,7 +50,7 @@ export default function Skills() {
                 <div 
                   key={skill.name} 
                   className="flex items-center rounded-md px-4 py-1">
-                  <div className="bg-lime-950/10 p-2 rounded-md text-neutral-800/90">
+                  <div className="bg-neutral-50 p-2 rounded-md text-neutral-800/90">
                     {skill.icon}
                   </div>
                   <span className="font-semibold text-sm ml-2">{skill.name}</span>
