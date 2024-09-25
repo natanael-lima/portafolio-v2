@@ -26,7 +26,7 @@ export default function Home() {
   }, [darkMode]);
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-950 text-slate-200' : 'bg-neutral-50 text-slate-900'}`}>
+    <div className={`min-h-screen ${darkMode ? 'bg-neutral-950 text-slate-200' : 'bg-neutral-50 text-slate-900'}`}>
     
       {/* Pasar darkMode y setDarkMode como props al Header */}
       <div className="">
@@ -34,21 +34,19 @@ export default function Home() {
         <Header darkMode={darkMode} setDarkMode={setDarkMode} />
         </div>
       </div>
-      <main className="py-12">
-        <div className="">
-          <div className="mx-auto w-full px-4 sm:w-4/5 md:w-3/4 lg:w-3/5 p-1">
+      <main className="mb-2 pt-12">
+        <div className="mx-auto w-full px-4 sm:w-4/5 md:w-3/4 lg:w-3/5 p-1">
             <About/>
-          </div>
-        </div>
+         </div>
         <div className="bg-lime-950/5">
           <div className="mx-auto w-full px-4 sm:w-4/5 md:w-3/4 lg:w-3/5">
             <Skills />
             <Project/>
             <Contact/>
+            <Footer/>
           </div>
         </div>
       </main>
-      <Footer/>
     </div>
   );
 }

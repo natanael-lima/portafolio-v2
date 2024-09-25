@@ -1,83 +1,102 @@
 import React, { useState } from 'react'
-import { FaHtml5, FaCss3Alt, FaAngular, FaBootstrap, FaJava, FaNodeJs } from 'react-icons/fa'
+import { FaHtml5, FaCss3Alt, FaAngular, FaBootstrap, FaJava, FaNodeJs, FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { DiDotnet } from 'react-icons/di'
 import { SiThymeleaf, SiCsharp, SiSpring, SiMongodb, SiMicrosoftsqlserver, SiJsonwebtokens } from 'react-icons/si'
 import { GrMysql } from 'react-icons/gr'
 import { AiOutlineDotNet } from 'react-icons/ai'
-const projects = [
+
+export const projects = [
   {
-    name: 'Parking System Management',
-    img: 'https://i.postimg.cc/KzLFw5MM/project-playa.png',
-    description: 'System for multiple zones that handles vehicle entry/exit, ticketing, and customer management.',
-    technologies: ['C#', 'WPF', '.NET','SQL Server'],
-    githubLink: 'https://github.com/yourusername/html-css-portfolio',
-    liveDemo: 'https://yourwebsite.com/html-css-portfolio'
-  },
-  {
-    name: 'Clinical Shift Management',
-    img:'https://i.postimg.cc/kMZX84z2/portada-turnoss.png',
-    description: 'System for an ophthalmology clinic with appointment scheduling, patient and doctor management',
-    technologies: ['Java', 'Spring', 'JPA', 'Rest API', 'Postman', 'Unit Tests', 'MySQL'],
-    githubLink: 'https://github.com/yourusername/typescript-calculator',
-    liveDemo: 'https://yourwebsite.com/typescript-calculator'
-  },
-  {
-    name: 'Optical System Management',
-    img: 'https://i.postimg.cc/jj0MvQt9/project-optica.png',
-    description: 'A Windows Forms sales management system for an optician that manages clients, products, and sales with features for registration, modification, and detailed reporting.',
-    technologies: ['C#', 'WinForms', '.NET Framework', 'SQL Server', 'Stored Procedure'],
-    githubLink: 'https://github.com/yourusername/angular-ecommerce',
-    liveDemo: 'https://yourwebsite.com/angular-ecommerce'
-  },
-  {
-    name: 'Postulants System Management',
-    img: 'https://i.postimg.cc/sgCj6LVy/portada-postulan.png',
-    description: 'A web system for job applications with user registration, application tracking, and an admin module for managing and reviewing submissions.',
-    technologies : ['Java', 'Spring Boot', 'Thymeleaf', 'HTML', 'Bootstrap', 'JPA', 'MySQL'],
-    githubLink: 'https://github.com/yourusername/bootstrap-admin-dashboard',
-    liveDemo: 'https://yourwebsite.com/bootstrap-admin-dashboard'
-  },
-  {
-    name: 'Comprehensive Sales System',
-    img: 'https://i.postimg.cc/pd22xnh6/portada-gestion-ventas.png',
-    description: 'A sales management system for classic car models with user roles for managing sales, products, and settings.',
-    technologies :['Java', 'Spring Boot','Thymeleaf', 'HTML', 'CSS', 'Bootstrap', 'MySQL'],
-    githubLink: 'https://github.com/yourusername/winform-inventory',
-    liveDemo: 'https://yourwebsite.com/winform-inventory'
-  },
-  {
-    name: 'Event Management System',
-    img: 'https://i.postimg.cc/85cNfQbd/portada-eventos.png',
-    description: 'A web system for scheduling and tracking business meetings, with detailed reporting and participant access to agendas and meeting details.',
-    technologies : ['HTML', 'CSS', 'Bootstrap', 'Angular', 'NodeJS', 'Postman', 'Express', 'TypeScript', 'MongoDB'],
-    githubLink: 'https://github.com/yourusername/wpf-media-player',
-    liveDemo: 'https://yourwebsite.com/wpf-media-player'
-  },
-  {
-    name: 'Lovely Dating App',
-    img: 'https://i.postimg.cc/kD3mHVPw/portada-lovely-reponsive.png',
-    description: 'Lovely is a dating app like Tinder, offering user registration, profile creation, real-time chatting, and a match search engine with mutual match conversations.',
-    technologies : ['Java', 'HTML', 'CSS', 'Angular', 'RESTful', 'Postman', 'MySQL', 'Spring Boot','JWT', 'WebSocket'],
-    githubLink: 'https://github.com/yourusername/thymeleaf-blog',
-    liveDemo: 'https://yourwebsite.com/thymeleaf-blog'
-  },
-  {
-    name: 'Griiin E-commerce Platform',
-    img: 'https://i.postimg.cc/W4Xs4b0b/portada-ecommerce.png',
-    description: 'Platform with an admin panel for managing users, categories, and products. It includes search and filtering features for a smooth shopping experience.',
-    technologies: ['Java', 'HTML', 'CSS', 'Angular', 'RESTful API', 'Postman', 'MySQL', 'Spring Boot','JWT'],
-    githubLink: 'https://github.com/yourusername/docker-nodejs-api',
-    liveDemo: 'https://yourwebsite.com/docker-nodejs-api'
-  },
-  {
-    name: 'Hotel System',
     img: 'https://i.postimg.cc/qRF08bmP/portada-hotel.png',
-    description: 'System built with Spring Boot and React, using PostgreSQL for data management. It offers a seamless booking experience with a modern, full-stack architecture.',
-    technologies: ['React','Tailwind','Vite','HTML','Node.js', 'Docker', 'Spring','Postgresql'],
-    githubLink: 'https://github.com/yourusername/docker-nodejs-api',
-    liveDemo: 'https://yourwebsite.com/docker-nodejs-api'
-  }
+    title: 'Hotel Reservation System',
+    description: 'Registra usuarios, permite reservar y cancelar habitaciones, administra tarifas, procesa pagos e integra reseñas de usuarios.',
+    technologies: ['React','Tailwind','Vite','HTML','Node.js', 'Docker', 'Spring Boot','Postgresql'],
+    sourceLink: 'https://github.com/natanael-lima/hotel-reservation-system',
+    demoLink: 'https://yourproject1.demo.com'
+  },
+  {
+    img: 'https://i.postimg.cc/W4Xs4b0b/portada-ecommerce.png',
+    title: 'E-commerce Platform',
+    description: 'Gestiona usuarios, categorías y productos desde un panel administrativo con búsqueda y filtrado para una mejor experiencia.',
+    technologies: ['Java', 'HTML', 'CSS', 'Angular', 'RESTful', 'Postman', 'MySQL', 'Spring Boot','JWT'],
+    sourceLink: 'https://github.com/natanael-lima/ecommerce-web-application.git',
+    demoLink: 'https://yourproject2.demo.com'
+  },
+  {
+    img: 'https://i.postimg.cc/qv6mRmnt/portada-lovely.png',
+    title: 'Lovely Dating App',
+    description: 'Aplicación de citas con registro de usuarios, perfiles, chat en tiempo real y un motor de búsqueda de coincidencias.',
+    technologies : ['Java','CSS', 'Angular', 'RESTful', 'Postman', 'MySQL', 'Spring Boot','JWT', 'WebSocket'],
+    sourceLink: 'https://github.com/natanael-lima/lovely-dating-web-app.git',
+    demoLink: 'https://yourproject2.demo.com'
+  },
+  {
+    img: 'https://i.postimg.cc/sgCj6LVy/portada-postulan.png',
+    title: 'Postulants System Management',
+    description: 'Registra usuarios, permite seguimiento de postulaciones y cuenta con un rol administrativo para gestionar y revisar solicitudes.',
+    technologies : ['Java', 'Spring Boot', 'Thymeleaf', 'HTML', 'Bootstrap', 'JPA', 'MySQL'],
+    sourceLink: 'https://github.com/natanael-lima/applications-web-application.git',
+    demoLink: 'https://yourproject2.demo.com'
+  },
+  {
+    img: 'https://i.postimg.cc/Wbkp7VcX/portada-weather.png',
+    title: 'Weather App',
+    description: 'Obtén información meteorológica precisa, incluyendo temperatura y velocidad del viento, con una interfaz sencilla.',
+    technologies :['NextJs', 'Tailwind','API'],
+    sourceLink: 'https://github.com/natanael-lima/weather-app.git',
+    demoLink: 'https://weather-app-nine-inky-68.vercel.app'
+  },
+  {
+    img: 'https://i.postimg.cc/GmPcZj2D/portada-tiendahia.png',
+    title: 'HIA Store Layout',
+    description: 'Maquetación de una tienda de productos artesanales, creado con Mobirise con seguimiento de visitas a través de Google Analytics.',
+    technologies :['Mobirise', 'HTML','CSS','Google-Analytics'],
+    sourceLink: 'https://github.com/natanael-lima/layout-store-mobirise',
+    demoLink: 'https://natanael-lima.github.io/layout-store-mobirise/'
+  },
+  {
+    img: 'https://i.postimg.cc/pd22xnh6/portada-gestion-ventas.png',
+    title: 'Comprehensive Sales System',
+    description: 'Gestiona ventas, productos y configuraciones de automóviles clásicos con roles de usuario específicos.',
+    technologies :['Java', 'Spring Boot','Thymeleaf', 'HTML', 'CSS', 'Bootstrap', 'MySQL'],
+    sourceLink: 'https://github.com/natanael-lima/sales-management-web-applications.git',
+    demoLink: 'https://yourproject2.demo.com'
+  },
+  {
+    img: 'https://i.postimg.cc/85cNfQbd/portada-eventos.png',
+    title: 'Event Management System',
+    description: 'Programa y rastrea reuniones de negocios con informes detallados y acceso para los participantes a agendas y detalles.',
+    technologies : ['HTML', 'CSS', 'Bootstrap', 'Angular', 'NodeJS', 'Postman', 'Express', 'TypeScript', 'MongoDB'],
+    sourceLink: 'https://github.com/maxi1103/TpFinal-PySW-2022',
+    demoLink: 'https://yourproject2.demo.com'
+  },
+  {
+    img: 'https://i.postimg.cc/KzLFw5MM/project-playa.png',
+    title: 'Parking System Management',
+    description: 'Control de vehículos, emisión de boletos, gestión de clientes, seguimiento de espacios y generación de informes de ventas.',
+    technologies: ['C#', 'WPF', '.NET','SQL Server'],
+    sourceLink: 'https://github.com/natanael-lima/parking-management-desktop-application.git',
+    demoLink: 'https://yourproject2.demo.com'
+  },
+  {
+    img: 'https://i.postimg.cc/jj0MvQt9/project-optica.png',
+    title: 'Optical System Management',
+    description: 'Gestiona clientes, productos, ventas y usuarios con funciones de registro, modificación e informes detallados.',
+                  
+    technologies: ['C#', 'WinForms', '.NET Framework', 'SQL Server', 'Stored Procedure'],
+    sourceLink: 'https://github.com/natanael-lima/optical-management-desktop-application.git',
+    demoLink: 'https://yourproject2.demo.com'
+  },
+  {
+    img: 'https://i.postimg.cc/kMZX84z2/portada-turnoss.png',
+    title: 'Clinical Shift Management',
+    description: 'Programa citas, gestiona pacientes, médicos y obras sociales, asigna turnos y envía notificaciones por correo electrónico.',
+    technologies: ['Java', 'Spring', 'JPA', 'Rest API', 'Postman', 'Unit Tests', 'MySQL'],
+    sourceLink: 'https://gitlab.com/lima73777/poo-2021-grupo02',
+    demoLink: 'https://yourproject2.demo.com'
+  },
+  // Agrega más proyectos aquí
 ];
 
 const frontendSkills = [
@@ -114,82 +133,104 @@ export default function Project() {
 
   return (
     <section id="portfolio" className="mb-12">
-       <h3 className="text-3xl font-md mb-2 mt-12 text-center">Projects</h3>
-      <div className="mb-4">
-        <button
-          onClick={() => setSelectedTechnology('All')}
-          className={`mr-2 mb-2 px-4 py-2 rounded-full ${
-            selectedTechnology === 'All' ? 'bg-neutral-400/50 text-neutral-700' : 'text-neutral-800 bg-neutral-400/20 hover:bg-neutral-500/30'
-          }`}
-        >
-          All
-        </button>
-        {[...frontendSkills, ...backendSkills].map((skill, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedTechnology(skill.name)}
-            className={`mr-2 mb-2 px-4 py-2 rounded-full ${
-              selectedTechnology === skill.name ? 'bg-neutral-400/50 text-neutral-700' : 'text-neutral-800 bg-neutral-400/20 hover:bg-neutral-500/30'
-            }`}
-          >
-            {skill.name}
-          </button>
-        ))}
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-      {filteredProjects.map((project) => (
-      <div 
-        key={project.name} 
-        className="relative bg-neutral-50 rounded-lg p-2 overflow-hidden shadow-md transition-all duration-300 dark:bg-gray-800 group hover:bg-neutral-100"
+  <h3 className="text-3xl font-semibold mb-4 mt-12 text-center text-neutral-800 dark:text-neutral-100">
+    Projects
+  </h3>
+
+  <div className="mb-4">
+    <button
+      onClick={() => setSelectedTechnology('All')}
+      className={`mr-2 mb-2 px-4 py-2 rounded-full transition-all duration-300 ${
+        selectedTechnology === 'All' 
+          ? 'bg-neutral-400/50 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-100' 
+          : 'text-neutral-800 dark:text-neutral-300 bg-neutral-400/20 dark:bg-neutral-600/20 hover:bg-neutral-500/30 dark:hover:bg-neutral-700/40'
+      }`}
+    >
+      All
+    </button>
+    {[...frontendSkills, ...backendSkills].map((skill, index) => (
+      <button
+        key={index}
+        onClick={() => setSelectedTechnology(skill.name)}
+        className={`mr-2 mb-2 px-4 py-2 rounded-full transition-all duration-300 ${
+          selectedTechnology === skill.name
+            ? 'bg-neutral-400/50 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-100'
+            : 'text-neutral-800 dark:text-neutral-300 bg-neutral-400/20 dark:bg-neutral-600/20 hover:bg-neutral-500/30 dark:hover:bg-neutral-700/40'
+        }`}
       >
-        {/* Contenedor de la imagen con padding */}
-        <div className="relative p-2">
+        {skill.name}
+      </button>
+    ))}
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+    {filteredProjects.map((project) => (
+      <a
+        key={project.title}
+        href={project.demoLink}
+        className="relative bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 shadow-md transition-all duration-300 group hover:bg-neutral-100 dark:hover:bg-neutral-700 flex"
+        style={{ display: 'flex', alignItems: 'flex-start' }}
+      >
+        {/* Columna de la imagen (30%) */}
+        <div className="w-2/5 mr-4">
           <img 
             src={project.img} 
-            alt={`Project ${project.name}`} 
-            className="w-full h-48 object-cover rounded-lg transition-transform duration-300"
+            alt={`Project ${project.title}`} 
+            className="w-full h-auto object-cover rounded-lg transition-transform duration-300"
           />
+        </div>
 
-          {/* Tecnologías sobre la imagen */}
-          <div className="p-2 flex flex-wrap gap-1 justify-start">
+        {/* Columna de contenido (70%) */}
+        <div className="w-3/5 flex flex-col justify-between">
+          {/* Título e Iconos */}
+          <div className="flex justify-between items-start mb-2">
+            {/* Título */}
+            <h3 className="text-sm font-semibold text-neutral-800 dark:text-neutral-100 group-hover:text-lime-600 transition-colors">
+              {project.title}
+            </h3>
+
+            {/* Iconos de Demo y Código */}
+            <div className="flex gap-3 z-10">
+              <a 
+                href={project.sourceLink} 
+                onClick={(e) => e.stopPropagation()} 
+                className="text-neutral-800 dark:text-neutral-100 hover:text-lime-600 transition-colors"
+                aria-label="Source Code"
+              >
+                <FaGithub size={16} />
+              </a>
+              <a 
+                href={project.demoLink} 
+                onClick={(e) => e.stopPropagation()} 
+                className="text-neutral-800 dark:text-neutral-100 hover:text-lime-600 transition-colors"
+                aria-label="Live Demo"
+              >
+                <FaExternalLinkAlt size={16} />
+              </a>
+            </div>
+          </div>
+
+          {/* Descripción */}
+          <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-2">
+            {project.description}
+          </p>
+
+          {/* Tecnologías */}
+          <div className="flex flex-wrap gap-1 mt-2">
             {project.technologies.map((tech) => (
               <span 
                 key={tech} 
-                className="border border-lime-950/10 bg-lime-900/20 text-lime-900 px-1 py-0.5 rounded text-xs"
+                className="bg-lime-400/25 text-lime-600/70 px-1 py-0.5 rounded-full text-xs font-normal"
               >
                 {tech}
               </span>
             ))}
           </div>
         </div>
-        {/* Contenedor para el Título, Descripción y Tecnologías */}
-        <div className="p-2">
-          {/* Título */}
-          <h3 className="text-sm font-semibold text-gray-800 dark:text-white mb-1">{project.name}</h3>
-
-          {/* Descripción */}
-          <p className="text-xs text-gray-600 dark:text-neutral-400 mb-2">{project.description}</p>
-
-          {/* Botones que solo aparecen en hover sobre el contenedor general */}
-          <div className="flex gap-2 justify-start mt-2  ">
-            <a 
-              href={project.liveDemo} 
-              className="text-sm font-medium px-3 py-2 rounded-lg bg-neutral-800 text-white hover:bg-neutral-600 transition-colors"
-            >
-              Live Demo
-            </a>
-            <a 
-              href={project.githubLink} 
-              className="text-sm font-medium px-3 py-2 rounded-lg bg-neutral-800 text-white hover:bg-neutral-600 transition-colors"
-            >
-              Source Code
-            </a>
-          </div>
-        </div>
-      </div>
+      </a>
     ))}
+  </div>
+</section>
 
-      </div>
-    </section>
   )
 }

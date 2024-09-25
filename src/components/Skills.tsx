@@ -41,60 +41,74 @@ export default function Skills() {
     
       return (
         <section id="skills" className="mb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Frontend Development */}
-          <div className="col-span-1">
-            <h3 className="text-3xl font-md mb-2 mt-12 text-center">Frontend Development</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-              {frontendSkills.map((skill) => (
-                <div 
-                  key={skill.name} 
-                  className="flex items-center rounded-md px-4 py-1">
-                  <div className="bg-neutral-50 p-2 rounded-md text-neutral-800/90">
-                    {skill.icon}
-                  </div>
-                  <span className="font-semibold text-sm ml-2">{skill.name}</span>
-                </div>
-              ))}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {/* Frontend Development */}
+    <div className="col-span-1">
+      <h3 className="text-3xl font-semibold mb-4 mt-12 text-center text-neutral-800 dark:text-neutral-100">
+        Frontend Development
+      </h3>
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+        {frontendSkills.map((skill) => (
+          <div
+            key={skill.name}
+            className="flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-md p-4 shadow-md transition-all duration-300 hover:bg-lime-100 dark:hover:bg-lime-900"
+          >
+            <div className="bg-lime-200 dark:bg-lime-800 p-2 rounded-md text-lime-900 dark:text-lime-300">
+              {skill.icon}
             </div>
+            <span className="font-semibold text-sm ml-4 text-neutral-800 dark:text-neutral-100">
+              {skill.name}
+            </span>
           </div>
-      
-          {/* Backend Development */}
-          <div className="col-span-1">
-            <h3 className="text-3xl font-md mb-2 mt-12 text-center">Backend Development</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-              {backendSkills.map((skill, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-center rounded-md px-4 py-1">
-                  <div className="bg-lime-950/10 p-2 rounded-md text-neutral-800/90">
-                    {skill.icon}
-                  </div>
-                  <span className="font-semibold text-sm ml-2">{skill.name}</span>
-                </div>
-              ))}
+        ))}
+      </div>
+    </div>
+
+    {/* Backend Development */}
+    <div className="col-span-1">
+      <h3 className="text-3xl font-semibold mb-4 mt-12 text-center text-neutral-800 dark:text-neutral-100">
+        Backend Development
+      </h3>
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+        {backendSkills.map((skill, index) => (
+          <div
+            key={index}
+            className="flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-md p-4 shadow-md transition-all duration-300 hover:bg-lime-100 dark:hover:bg-lime-900"
+          >
+            <div className="bg-lime-200 dark:bg-lime-800 p-2 rounded-md text-lime-900 dark:text-lime-300">
+              {skill.icon}
             </div>
+            <span className="font-semibold text-sm ml-4 text-neutral-800 dark:text-neutral-100">
+              {skill.name}
+            </span>
           </div>
-      
-          {/* Extra Skills */}
-          <div className="col-span-1">
-            <h3 className="text-3xl font-md mb-2 mt-12 text-center">Extra Skills</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
-              {extraSkills.map((skill, index) => (
-                <div 
-                  key={index} 
-                  className="flex items-center rounded-md px-4 py-1">
-                  <div className="bg-lime-950/10 p-2 rounded-md text-neutral-800/90">
-                    {skill.icon}
-                  </div>
-                  <span className="font-semibold text-sm ml-2">{skill.name}</span>
-                </div>
-              ))}
+        ))}
+      </div>
+    </div>
+
+    {/* Extra Skills */}
+    <div className="col-span-1">
+      <h3 className="text-3xl font-semibold mb-4 mt-12 text-center text-neutral-800 dark:text-neutral-100">
+        Extra Skills
+      </h3>
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
+        {extraSkills.map((skill, index) => (
+          <div
+            key={index}
+            className="flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-md p-4 shadow-md transition-all duration-300 hover:bg-lime-100 dark:hover:bg-lime-900"
+          >
+            <div className="bg-lime-200 dark:bg-lime-800 p-2 rounded-md text-lime-900 dark:text-lime-300">
+              {skill.icon}
             </div>
+            <span className="font-semibold text-sm ml-4 text-neutral-800 dark:text-neutral-100">
+              {skill.name}
+            </span>
           </div>
-        </div>
-      </section>
-      
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
      );
 }
