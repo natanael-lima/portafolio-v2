@@ -12,41 +12,39 @@ import Hero from "@/components/Hero";
 
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(true);
-  const [isVisible, setIsVisible] = useState([false, false, false, false, false]);
-  // Recuperar la preferencia de modo oscuro desde el localStorage cuando la página se carga
+  const [darkMode, setDarkMode] = useState(false); // Inicia en modo claro
+  const [isVisible, setIsVisible] = useState(Array(5).fill(false)); // Todas las secciones inicialmente invisibles
+
   useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode') === 'false'; // Recuperar el valor guardado
-    setDarkMode(savedMode);
-    document.documentElement.classList.toggle('dark', savedMode); // Establecer la clase 'dark' en el HTML
+    const savedMode = localStorage.getItem('darkMode') === 'true'; // Verifica el modo oscuro guardado
+    if (savedMode) {
+      setDarkMode(savedMode);
+      document.documentElement.classList.toggle('dark', savedMode); // Aplica la clase 'dark' al elemento raíz
+    }
   }, []);
 
-  // Actualizar el localStorage y la clase 'dark' en el <html> cuando cambie el estado de darkMode
   useEffect(() => {
-    localStorage.setItem('darkMode', darkMode.toString()); // Guardar la preferencia en localStorage
-    document.documentElement.classList.toggle('dark', darkMode); // Aplicar la clase 'dark' según el modo
+    localStorage.setItem('darkMode', darkMode.toString()); // Guarda el estado del modo oscuro
+    document.documentElement.classList.toggle('dark', darkMode); // Aplica o quita la clase 'dark' según el estado
   }, [darkMode]);
- // Animaciones secuenciales
- useEffect(() => {
-  const timeouts: NodeJS.Timeout[] = [];
 
-  // Animar cada sección de forma secuencial con un delay
-  isVisible.forEach((visible, index) => {
-    const timeout = setTimeout(() => {
-      setIsVisible((prev) => {
-        const newState = [...prev];
-        newState[index] = true;
-        return newState;
-      });
-    }, index * 300); // Incrementa el retraso en 300ms por cada sección
-    timeouts.push(timeout);
-  });
+  useEffect(() => {
+    const timeouts: NodeJS.Timeout[] = [];
+    isVisible.forEach((visible, index) => {
+      const timeout = setTimeout(() => {
+        setIsVisible(prev => {
+          const newState = [...prev];
+          newState[index] = true;
+          return newState;
+        });
+      }, index * 300);
+      timeouts.push(timeout);
+    });
 
-  return () => {
-    // Limpiar timeouts si el componente se desmonta
-    timeouts.forEach((timeout) => clearTimeout(timeout));
-  };
-}, []);
+    return () => {
+      timeouts.forEach(timeout => clearTimeout(timeout));
+    };
+  }, []);
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-lime-950/20 text-neutral-100' : 'bg-neutral-100/80 text-neutral-900'}`}>

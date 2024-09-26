@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaHtml5, FaCss3Alt, FaGithub , FaAngular, FaBootstrap, FaGitAlt, FaJava,FaNodeJs   } from "react-icons/fa";
-import { SiMongodb, SiSpring, SiPostman,SiCsharp,SiThymeleaf,SiMicrosoftsqlserver,SiJsonwebtokens,SiCoreldraw,SiAdobephotoshop,SiDocker  } from "react-icons/si";
+import { SiMongodb, SiSpring, SiPostman,SiCsharp,SiThymeleaf,SiMicrosoftsqlserver,SiCoreldraw,SiAdobephotoshop,SiDocker  } from "react-icons/si";
 import { DiDotnet, DiScrum } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
 import { AiOutlineDotNet } from "react-icons/ai";
@@ -26,7 +26,6 @@ export default function Skills() {
     { name: 'MongoDB', icon: <SiMongodb size={32} /> },
     { name: '.NET', icon: <AiOutlineDotNet size={32} /> },
     { name: 'SQLServer', icon: <SiMicrosoftsqlserver size={32} /> },
-    { name: 'JWT', icon: <SiJsonwebtokens size={32} /> },
   ];
 
   const extraSkills = [
