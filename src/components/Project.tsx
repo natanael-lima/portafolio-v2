@@ -132,10 +132,10 @@ export default function Project() {
       );
 
   return (
-    <section id="portfolio" className="mb-12">
-  <h3 className="text-3xl font-semibold mb-4 mt-12 text-center text-neutral-800 dark:text-neutral-100">
-    Projects
-  </h3>
+    <section id="portfolio" className="mb-12 mx-auto w-full px-2 sm:px-14">
+    <h3 className="text-xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
+      Projects
+    </h3>
 
   <div className="mb-4">
     <button
@@ -168,7 +168,7 @@ export default function Project() {
       <a
         key={project.title}
         href={project.demoLink}
-        className="relative rounded-lg p-4 hover:shadow-md transition-all duration-300 group hover:bg-neutral-50 dark:hover:bg-neutral-800 flex"
+        className="relative rounded-lg p-4 hover:shadow-md transition-all duration-300 group hover:bg-neutral-100/80  dark:hover:bg-lime-200/5 flex"
         style={{ display: 'flex', alignItems: 'flex-start' }}
       >
         {/* Columna de la imagen (30%) */}

@@ -8,55 +8,55 @@ import { BiLogoTypescript } from "react-icons/bi";
 
 export default function Skills() {
   const frontendSkills = [
-    { name: 'HTML', icon: <FaHtml5 size={24} /> },
-    { name: 'CSS', icon: <FaCss3Alt size={24} /> },
-    { name: 'TypeScript', icon: <BiLogoTypescript size={24} /> },
-    { name: 'Angular', icon: <FaAngular size={24} /> },
-    { name: 'Bootstrap', icon: <FaBootstrap size={24} /> },
-    { name: 'WPF', icon: <DiDotnet size={24} /> },
-    { name: 'Thymeleaf', icon: <SiThymeleaf size={20} /> },
+    { name: 'HTML', icon: <FaHtml5 size={32} /> },
+    { name: 'CSS', icon: <FaCss3Alt size={32} /> },
+    { name: 'TypeScript', icon: <BiLogoTypescript size={32} /> },
+    { name: 'Angular', icon: <FaAngular size={32} /> },
+    { name: 'Bootstrap', icon: <FaBootstrap size={32} /> },
+    { name: 'WPF', icon: <DiDotnet size={32} /> },
+    { name: 'Thymeleaf', icon: <SiThymeleaf size={32} /> },
   ];
 
   const backendSkills = [
-    { name: 'Java', icon: <FaJava size={24} /> },
-    { name: 'C#', icon: <SiCsharp size={24} /> },
-    { name: 'Spring', icon: <SiSpring size={24} /> },
-    { name: 'NodeJS', icon: <FaNodeJs size={24} /> },
-    { name: 'MySQL', icon: <GrMysql size={24} /> },
-    { name: 'MongoDB', icon: <SiMongodb size={24} /> },
-    { name: '.NET', icon: <AiOutlineDotNet size={24} /> },
-    { name: 'SQLServer', icon: <SiMicrosoftsqlserver size={24} /> },
-    { name: 'JWT', icon: <SiJsonwebtokens size={24} /> },
+    { name: 'Java', icon: <FaJava size={32} /> },
+    { name: 'C#', icon: <SiCsharp size={32} /> },
+    { name: 'Spring', icon: <SiSpring size={32} /> },
+    { name: 'NodeJS', icon: <FaNodeJs size={32} /> },
+    { name: 'MySQL', icon: <GrMysql size={32} /> },
+    { name: 'MongoDB', icon: <SiMongodb size={32} /> },
+    { name: '.NET', icon: <AiOutlineDotNet size={32} /> },
+    { name: 'SQLServer', icon: <SiMicrosoftsqlserver size={32} /> },
+    { name: 'JWT', icon: <SiJsonwebtokens size={32} /> },
   ];
 
   const extraSkills = [
-    { name: 'SCRUM', icon: <DiScrum size={24} /> },
-    { name: 'CorelDraw', icon: <SiCoreldraw  size={24} /> },
-    { name: 'Photoshop', icon: <SiAdobephotoshop size={22} /> },
-    { name: 'Docker', icon: <SiDocker  size={24} /> },
-    { name: 'Git', icon: <FaGitAlt size={24} /> },
-    { name: 'GitHub', icon: <FaGithub size={24} /> },
-    { name: 'Postman', icon: <SiPostman size={24} /> },
+    { name: 'SCRUM', icon: <DiScrum size={32} /> },
+    { name: 'CorelDraw', icon: <SiCoreldraw  size={32} /> },
+    { name: 'Photoshop', icon: <SiAdobephotoshop size={32} /> },
+    { name: 'Docker', icon: <SiDocker  size={32} /> },
+    { name: 'Git', icon: <FaGitAlt size={32} /> },
+    { name: 'GitHub', icon: <FaGithub size={32} /> },
+    { name: 'Postman', icon: <SiPostman size={32} /> },
   ];
     
       return (
-        <section id="skills" className="mb-12">
+        <section id="skills" className="mb-12 mx-auto w-full px-2 sm:px-14">
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {/* Frontend Development */}
     <div className="col-span-1">
-      <h3 className="text-3xl font-semibold mb-4 mt-12 text-center text-neutral-800 dark:text-neutral-100">
-        Frontend Development
-      </h3>
+    <h3 className="text-xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
+      Frontend 
+    </h3>
       <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
         {frontendSkills.map((skill) => (
           <div
             key={skill.name}
-            className="flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-md p-4 shadow-md transition-all duration-300 hover:bg-lime-100 dark:hover:bg-lime-900"
+            className="flex items-center"
           >
-            <div className="bg-lime-200 dark:bg-lime-800 p-2 rounded-md text-lime-900 dark:text-lime-300">
+            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-700 transition-all duration-300">
               {skill.icon}
             </div>
-            <span className="font-semibold text-sm ml-4 text-neutral-800 dark:text-neutral-100">
+            <span className="font-semibold text-sm ml-2 text-neutral-800 dark:text-neutral-100">
               {skill.name}
             </span>
           </div>
@@ -66,16 +66,16 @@ export default function Skills() {
 
     {/* Backend Development */}
     <div className="col-span-1">
-      <h3 className="text-3xl font-semibold mb-4 mt-12 text-center text-neutral-800 dark:text-neutral-100">
-        Backend Development
-      </h3>
+    <h3 className="text-xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
+      Backend
+    </h3>
       <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
         {backendSkills.map((skill, index) => (
           <div
             key={index}
-            className="flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-md p-4 shadow-md transition-all duration-300 hover:bg-lime-100 dark:hover:bg-lime-900"
+            className="flex items-center "
           >
-            <div className="bg-lime-200 dark:bg-lime-800 p-2 rounded-md text-lime-900 dark:text-lime-300">
+            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-700 transition-all duration-300">
               {skill.icon}
             </div>
             <span className="font-semibold text-sm ml-4 text-neutral-800 dark:text-neutral-100">
@@ -88,19 +88,19 @@ export default function Skills() {
 
     {/* Extra Skills */}
     <div className="col-span-1">
-      <h3 className="text-3xl font-semibold mb-4 mt-12 text-center text-neutral-800 dark:text-neutral-100">
-        Extra Skills
+      <h3 className="text-xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
+        Extra 
       </h3>
       <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
         {extraSkills.map((skill, index) => (
           <div
             key={index}
-            className="flex items-center bg-neutral-100 dark:bg-neutral-800 rounded-md p-4 shadow-md transition-all duration-300 hover:bg-lime-100 dark:hover:bg-lime-900"
+            className="flex items-center"
           >
-            <div className="bg-lime-200 dark:bg-lime-800 p-2 rounded-md text-lime-900 dark:text-lime-300">
+            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-700 transition-all duration-300">
               {skill.icon}
             </div>
-            <span className="font-semibold text-sm ml-4 text-neutral-800 dark:text-neutral-100">
+            <span className="font-semibold text-sm ml-2 text-neutral-800 dark:text-neutral-100">
               {skill.name}
             </span>
           </div>

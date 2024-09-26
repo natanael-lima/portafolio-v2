@@ -1,79 +1,61 @@
 
 import React from 'react'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
-import { MdArrowOutward } from "react-icons/md";
-import { PiReadCvLogoFill } from 'react-icons/pi';
 
 export default function About() {
 
   return (
-    <section id="about" className="mb-12">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+    <section id="about" className="mb-12 mx-auto w-full px-2 sm:px-14">
+    <h3 className="text-xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
+      About me
+    </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 items-center mx-auto">
 
-    {/* Primera columna: Imagen y nombre grande */}
-    <div className="flex flex-col items-center md:items-start">
-      <img 
-        src="https://i.postimg.cc/SK6LgqZR/me3.webp"
-        alt="Profile"
-        className="w-24 h-24 rounded-full object-cover mb-4"
-      />
-      <h1 className="text-5xl font-semibold text-center md:text-left text-neutral-800 dark:text-neutral-100">
-        Hello! I am Natanael Lima
-      </h1>
-    </div>
+          {/* Columna 1: Imagen y datos personales */}
+          <div className="flex flex-col md:flex-row items-center md:items-center gap-10">
+            {/* Imagen cuadrada */}
+            <img 
+              src="https://i.postimg.cc/597B7smB/me6.webp"
+              alt="Profile"
+              className="w-44 h-44 rounded-lg object-cover mb-2"
+            />
 
-    {/* Segunda columna: Título y descripción */}
-    <div className="flex flex-col items-center md:items-start">
-      <h2 className="text-3xl font-semibold mb-2 text-center md:text-left text-neutral-800 dark:text-neutral-100">
-        A Software Developer / Programmer Analyst, Argentina.
-      </h2>
-      <p className="text-lg mb-4 text-center md:text-left text-neutral-600 dark:text-neutral-300">
-        I focus on web and desktop app development with a passion for solving problems efficiently.
-      </p>
-      <p className="text-lg mb-4 text-center md:text-left text-neutral-600 dark:text-neutral-300">
-        I love building adaptable software and working with teams to push projects forward.
-      </p>
+            {/* Contenedor de información personal */}
+            <div className="flex flex-col justify-center items-start text-center md:text-left space-y-2">
+              
+              {/* Span con punto y estado de trabajo */}
+              <div className="flex items-center space-x-2 text-neutral-500 dark:text-neutral-100 text-sm py-2 px-3 bg-neutral-300/50 rounded-full">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-lime-500"></span>
+                </span>
+                <span>Available for Work</span>
+              </div>
 
-      {/* Botón de Available to Work */}
-      <a
-        href="https://www.linkedin.com/in/natanael-ever-lima-gutierrez-9bb695259/"
-        className='mt-4 rounded-lg px-4 py-2 border-2 flex items-center justify-center border-neutral-500 text-neutral-500 hover:bg-neutral-500 hover:text-white transition-colors duration-200'
-      >
-        Available To Work
-        <MdArrowOutward size={20} className="ml-2" />
-      </a>
+              {/* Nombre */}
+              <h1 className="text-3xl font-bold text-neutral-800 dark:text-neutral-100 mt-2">
+                Natanael Lima
+              </h1>
 
-      {/* Navegación de redes sociales */}
-      <nav className="flex items-center space-x-3 mt-6">
-        {/* Iconos de redes sociales */}
-        <a
-          className="transition-colors duration-200  text-neutral-500 dark:text-neutral-100 hover:text-lime-600 flex items-center justify-center"
-          href="https://www.linkedin.com/in/natanael-ever-lima-gutierrez-9bb695259/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaLinkedinIn className="transition-transform duration-200 hover:-translate-y-1 text-2xl" />
-        </a>
-        <a
-          className="transition-colors duration-200 text-neutral-500 dark:text-neutral-100 hover:text-lime-600 flex items-center justify-center"
-          href="https://github.com/natanael-lima"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaGithub className="transition-transform duration-200 hover:-translate-y-1 text-2xl" />
-        </a>
-        <a
-          className="transition-colors duration-200 text-neutral-500 dark:text-neutral-100 hover:text-lime-600 flex items-center justify-center"
-          href="/CV.pdf"
-          download="CV-LIMA-NATANAEL.pdf"
-        >
-          <PiReadCvLogoFill className="transition-transform duration-200 hover:-translate-y-1 text-2xl" />
-        </a>
-      </nav>
-    </div>
-  </div>
-</section>
+              {/* Profesión */}
+              <h2 className="text-lg font-medium text-neutral-500 dark:text-neutral-100">
+              Programmer Analyst
+              </h2>
+            </div>
+          </div>
 
+          {/* Columna 2: Descripción */}
+          <div className="flex flex-col text-left space-y-3">
+            <p className="text-sm text-neutral-400 dark:text-neutral-300">
+              Hi, I am <span className="font-semibold text-neutral-600 dark:text-neutral-100">Software Developer  / Programmer Analyst</span> from <span className="font-semibold text-neutral-600 dark:text-neutral-100">Argentina</span>, with experience in <span className="font-semibold text-neutral-600 dark:text-neutral-100">web and desktop applications</span> as well as <span className="font-semibold text-neutral-600 dark:text-neutral-100">data organization</span>.
+            </p>
+
+            <p className="text-sm text-neutral-400 dark:text-neutral-300">
+              I implement <span className="font-semibold text-neutral-600 dark:text-neutral-100">practical</span> and <span className="font-semibold text-neutral-600 dark:text-neutral-100">efficient solutions</span> using various <span className="font-semibold text-neutral-600 dark:text-neutral-100">languages and frameworks</span>. I focus on creating <span className="font-semibold text-neutral-600 dark:text-neutral-100">functional</span> and <span className="font-semibold text-neutral-600 dark:text-neutral-100">adaptable software</span>, collaborating through all stages of the development lifecycle, from <span className="font-semibold text-neutral-600 dark:text-neutral-100">analysis</span> to <span className="font-semibold text-neutral-600 dark:text-neutral-100">implementation</span>.
+            </p>
+
+          </div>
+        </div>
+      </section>
   );
 }
 
