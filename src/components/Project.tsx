@@ -100,7 +100,7 @@ export default function Project() {
     <div className="grid grid-cols-12 gap-4">
         {projects.map((project, index) => (
           <div key={index} className="col-span-12 md:col-span-6 lg:col-span-4">
-            <article className="bg-neutral-800/30 rounded-3xl border border-neutral-700/50 p-4">
+            <article className="bg-neutral-800/30 rounded-3xl border border-neutral-700/50 p-4 fade-in-up " style={{ animationDelay: '0.3s' }}>
               <div className="relative group overflow-hidden rounded-lg">
                 {/* Imagen del proyecto */}
                 <figure>

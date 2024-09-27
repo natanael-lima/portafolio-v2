@@ -14,13 +14,13 @@ export default function page() {
           <section className="col-span-12 grid grid-cols-12 gap-4">
             {/* Columna 1: Regresar al perfil */}
             <div className="col-span-12 md:col-span-4 flex flex-col gap-4">
-              <aside className="bg-neutral-800/30 p-5 rounded-3xl flex flex-col justify-center items-center border border-neutral-700/50">
+              <aside className="bg-neutral-800/30 p-5 rounded-3xl flex flex-col justify-center items-center border border-neutral-700/50 fade-in-up " style={{ animationDelay: '0.1s' }}>
                 <ViewProfile />
               </aside>
             </div>
               {/* Columna 2: Regresar al perfil */}
             <div className="col-span-12 md:col-span-8 flex flex-col gap-4">
-              <aside className="bg-neutral-800/30 p-5 rounded-3xl flex flex-col justify-center items-center border border-neutral-700/50 h-full">
+              <aside className="bg-neutral-800/30 p-5 rounded-3xl flex flex-col justify-center items-center border border-neutral-700/50 h-full fade-in-up " style={{ animationDelay: '0.2s' }}>
                   <h2 className="text-neutral-100 text-3xl font-bold">My Projects</h2>
               </aside>
             </div>
@@ -28,7 +28,7 @@ export default function page() {
           {/* Segunda fila: Proyectos */}
           <section className="col-span-12 grid grid-cols-12 gap-4">
                   {/* Columna 3x3: Proyectos */}
-                  <article className="col-span-12 md:col-span-12 flex flex-col gap-4">
+                  <article className="col-span-12 md:col-span-12 flex flex-col gap-4 ">
                     <Project/>
                   </article>
           </section>
