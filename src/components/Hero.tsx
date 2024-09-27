@@ -72,8 +72,8 @@ export default function Hero() {
       </a>
       <a
         className="transition-colors duration-200 text-neutral-950/80  dark:text-lime-50/90 hover:text-neutral-900/60 dark:hover:text-lime-100/90 flex items-center justify-center"
-        href="/CV.pdf"
-        download="CV-LIMA-NATANAEL.pdf"
+        href="/resume.pdf"
+        download="resume-lima.pdf"
       >
         <PiReadCvLogoFill className="transition-transform duration-200 hover:-translate-y-1 text-2xl" />
       </a>
