@@ -186,7 +186,7 @@ export default function Project() {
               {/* Título e Iconos */}
               <div className="flex justify-between items-start mb-2">
                 {/* Título */}
-                <h3 className="text-sm font-semibold text-neutral-800 dark:text-neutral-100 group-hover:text-lime-600 transition-colors">
+                <h3 className="text-sm font-semibold text-lime-900 dark:text-neutral-100 group-hover:text-lime-600/80 dark:group-hover:text-lime-400/80 transition-colors">
                   {project.title}
                 </h3>
 
@@ -198,7 +198,7 @@ export default function Project() {
                       e.stopPropagation(); // Evitar que el clic propague al enlace principal
                       window.open(project.sourceLink, '_blank'); // Abrir en nueva pestaña
                     }} 
-                    className="text-neutral-800 dark:text-neutral-100 hover:text-lime-600 transition-colors cursor-pointer"
+                    className="text-lime-900 dark:text-lime-100 dark:hover:text-lime-300 hover:text-lime-500 transition-colors cursor-pointer"
                     aria-label="Source Code"
                   >
                     <FaGithub size={16} />
@@ -210,7 +210,7 @@ export default function Project() {
                       e.stopPropagation(); // Evitar que el clic propague al enlace principal
                       window.open(project.demoLink, '_blank'); // Abrir en nueva pestaña
                     }} 
-                    className="text-neutral-800 dark:text-neutral-100 hover:text-lime-600 transition-colors cursor-pointer"
+                    className="text-lime-900 dark:text-lime-100 dark:hover:text-lime-300 hover:text-lime-500 transition-colors cursor-pointer"
                     aria-label="Live Demo"
                   >
                     <FaExternalLinkAlt size={16} />
@@ -228,7 +228,7 @@ export default function Project() {
                 {project.technologies.map((tech) => (
                   <span 
                     key={tech} 
-                    className="bg-lime-500/20 text-lime-600/90 px-1.5 py-0.5 rounded-full text-xs font-normal dark:bg-lime-500/10 dark:text-lime-300/60"
+                    className="bg-lime-500/20 text-lime-600/90 px-1.5 py-0.5 rounded-full text-xs font-normal dark:bg-lime-700/40 dark:text-lime-300/80"
                   >
                     {tech}
                   </span>

@@ -52,7 +52,7 @@ export default function Skills() {
             key={skill.name}
             className="flex items-center"
           >
-            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-700 transition-all duration-300">
+            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-100 transition-all duration-300">
               {skill.icon}
             </div>
             <span className="font-semibold text-sm ml-2 text-neutral-800 dark:text-neutral-100">
@@ -74,7 +74,7 @@ export default function Skills() {
             key={index}
             className="flex items-center "
           >
-            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-700 transition-all duration-300">
+            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-100 transition-all duration-300">
               {skill.icon}
             </div>
             <span className="font-semibold text-sm ml-4 text-neutral-800 dark:text-neutral-100">
@@ -96,7 +96,7 @@ export default function Skills() {
             key={index}
             className="flex items-center"
           >
-            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-700 transition-all duration-300">
+            <div className="hover:text-lime-600 p-2 rounded-md text-lime-900 dark:hover:text-lime-300 dark:text-lime-100 transition-all duration-300">
               {skill.icon}
             </div>
             <span className="font-semibold text-sm ml-2 text-neutral-800 dark:text-neutral-100">

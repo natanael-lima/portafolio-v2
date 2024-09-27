@@ -19,11 +19,11 @@ export default function Header({ darkMode, setDarkMode }:HeaderProps) {
       {/* Logo y Correo */}
       <div className="flex justify-between w-full md:w-auto items-center mb-4 md:mb-0">
         <div className="flex items-center space-x-4">
-          <span className="font-sans font-bold text-xl text-neutral-700">Natanael<span className="text-lime-400">Lima</span></span>
+          <span className="font-sans font-bold text-xl text-neutral-700 dark:text-lime-50">Natanael<span className="text-lime-400">Lima</span></span>
         </div>
         <button
         onClick={toggleDarkMode}
-        className="block sm:hidden p-2 rounded-lg hover:bg-neutral-300/40 dark:hover:bg-neutral-700/40 transition flex items-center text-neutral-900 dark:text-neutral-200"
+        className="block sm:hidden p-2 rounded-lg text-neutral-950/80  hover:bg-neutral-300/40 dark:hover:bg-neutral-700/40 transition flex items-center text-neutral-900 dark:text-lime-50/90"
       >
         {darkMode ? <IoMdSunny size={20} /> : <IoMdMoon size={20} />}
       </button>
@@ -57,7 +57,7 @@ export default function Header({ darkMode, setDarkMode }:HeaderProps) {
       <div className="hidden md:block ">
         <button
           onClick={toggleDarkMode}
-          className="p-2 rounded-lg hover:bg-neutral-300/40 dark:hover:bg-neutral-700/40 transition flex items-center text-neutral-900 dark:text-neutral-200"
+          className="p-2 rounded-lg text-neutral-950/80 hover:bg-neutral-300/40 dark:hover:bg-neutral-700/40 transition flex items-center text-neutral-900 dark:text-lime-50/90"
         >
           {darkMode ? <IoMdSunny size={20} /> : <IoMdMoon size={20} />}
         </button>

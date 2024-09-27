@@ -11,33 +11,33 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1 items-center mx-auto">
 
           {/* Columna 1: Imagen y datos personales */}
-          <div className="flex flex-col md:flex-row items-center md:items-center gap-10">
+          <div className="flex flex-row items-center md:items-center gap-10">
             {/* Imagen cuadrada */}
             <img 
               src="https://i.postimg.cc/597B7smB/me6.webp"
               alt="Profile"
-              className="w-44 h-44 rounded-lg object-cover mb-2"
+              className="w-28 h-28 sm:w-44 sm:h-44 rounded-lg object-cover mb-2"
             />
 
             {/* Contenedor de información personal */}
             <div className="flex flex-col justify-center items-start text-center md:text-left space-y-2">
               
               {/* Span con punto y estado de trabajo */}
-              <div className="flex items-center space-x-2 text-neutral-500 dark:text-neutral-100 text-sm py-2 px-3 bg-neutral-300/50 rounded-full">
+              <div className="flex items-center space-x-2 text-neutral-500 dark:text-neutral-100 text-sm py-2 px-3 bg-neutral-200/50 dark:bg-neutral-50/10 rounded-full">
                 <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-lime-500"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-lime-600 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-lime-600"></span>
                 </span>
-                <span>Available for Work</span>
+                <span className='text-lime-600'>Available for work</span>
               </div>
 
               {/* Nombre */}
-              <h1 className="text-3xl font-bold text-neutral-800 dark:text-neutral-100 mt-2">
+              <h1 className="text-3xl font-bold text-neutral-800 dark:text-lime-50 mt-2">
                 Natanael Lima
               </h1>
 
               {/* Profesión */}
-              <h2 className="text-lg font-medium text-neutral-500 dark:text-neutral-100">
+              <h2 className="text-lg font-medium text-neutral-500 dark:text-lime-50/50">
               Programmer Analyst
               </h2>
             </div>
