@@ -12,7 +12,7 @@ import Hero from "@/components/Hero";
 
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false); // Inicia en modo claro
+  const [darkMode, setDarkMode] = useState(true); // Inicia en modo claro
   const [isVisible, setIsVisible] = useState(Array(5).fill(false)); // Todas las secciones inicialmente invisibles
 
   useEffect(() => {
