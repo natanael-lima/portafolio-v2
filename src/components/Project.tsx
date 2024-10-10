@@ -110,7 +110,7 @@ export default function Project() {
   const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 2);
 
   return (
-    <section id="portfolio" className="mb-12 mx-auto w-full px-2 sm:px-14">
+    <section id="portfolio" className="mb-12 mx-auto w-full px-2 sm:px-8">
       <header className="flex justify-between items-center">
       <h3 className="text-2xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
         Projects

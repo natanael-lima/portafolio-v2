@@ -21,3 +21,9 @@ body {
   transform: translateY(0);
 }
 
+@layer utilities{
+  .paused{
+    animation-play-state: paused;
+  }
+}
+

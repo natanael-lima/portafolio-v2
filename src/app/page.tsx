@@ -15,7 +15,7 @@ export default function Home() {
   const [isVisible, setIsVisible] = useState(Array(5).fill(false)); // Todas las secciones inicialmente invisibles
 
   useEffect(() => {
-    const savedMode = localStorage.getItem('darkMode') === 'true'; // Verifica el modo oscuro guardado
+    const savedMode = localStorage.getItem('darkMode') === 'false'; // Verifica el modo oscuro guardado
     if (savedMode) {
       setDarkMode(savedMode);
       document.documentElement.classList.toggle('dark', savedMode); // Aplica la clase 'dark' al elemento raíz

@@ -1,181 +1,106 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { FaHtml5, FaCss3Alt, FaAngular, FaBootstrap, FaNodeJs, FaJava, FaGitAlt, FaGithub } from 'react-icons/fa';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { SiSpring, SiCsharp, SiMongodb, SiMicrosoftsqlserver, SiDocker, SiCoreldraw, SiPostman } from 'react-icons/si';
 import { IoIosArrowForward } from 'react-icons/io';
 
-// Definimos el tipo para los grupos de habilidades
-interface SkillGroup {
-  name: string;
-  icon: JSX.Element;
-  skills: { name: string; icon: JSX.Element }[];
-}
-
-const frontendSkills = [
-  { name: 'HTML', icon: <FaHtml5 size={32} /> },
-  { name: 'CSS', icon: <FaCss3Alt size={32} /> },
-  { name: 'TypeScript', icon: <BiLogoTypescript size={32} /> },
-  { name: 'Angular', icon: <FaAngular size={32} /> },
-  { name: 'Bootstrap', icon: <FaBootstrap size={32} /> },
-  { name: 'WPF', icon: <SiCoreldraw size={32} /> },
-  { name: 'Thymeleaf', icon: <SiPostman size={32} /> },
-];
-
-const backendSkills = [
-  { name: 'Java', icon: <FaJava size={32} /> },
-  { name: 'C#', icon: <SiCsharp size={32} /> },
-  { name: 'Spring', icon: <SiSpring size={32} /> },
-  { name: 'NodeJS', icon: <FaNodeJs size={32} /> },
-  { name: 'MySQL', icon: <SiMicrosoftsqlserver size={32} /> },
-  { name: 'MongoDB', icon: <SiMongodb size={32} /> },
-];
-
-const extraSkills = [
-  { name: 'SCRUM', icon: <SiCoreldraw size={32} /> },
-  { name: 'Docker', icon: <SiDocker size={32} /> },
-  { name: 'Git', icon: <FaGitAlt size={32} /> },
-  { name: 'GitHub', icon: <FaGithub size={32} /> },
-];
-
-const skillGroups: SkillGroup[] = [
-  { name: 'Frontend', icon: <FaHtml5 />, skills: frontendSkills },
-  { name: 'Backend', icon: <FaNodeJs />, skills: backendSkills },
-  { name: 'Extra', icon: <SiDocker />, skills: extraSkills },
+const skillsAll = [
+  { name: 'HTML', description: 'Lenguaje de tipado', icon: <FaHtml5 size={24} color="#E34F26" />, type: 'Frontend' },
+  { name: 'CSS', description: 'Estilo en cascada', icon: <FaCss3Alt size={24} color="#1572B6" />, type: 'Frontend' },
+  { name: 'TypeScript', description: 'JavaScript tipado', icon: <BiLogoTypescript size={24} color="#3178C6" />, type: 'Frontend' },
+  { name: 'Angular', description: 'Framework para SPA', icon: <FaAngular size={24} color="#DD0031" />, type: 'Frontend' },
+  { name: 'Bootstrap', description: 'Framework CSS', icon: <FaBootstrap size={24} color="#7952B3" />, type: 'Frontend' },
+  { name: 'WPF', description: 'Windows Presentation Foundation', icon: <SiCoreldraw size={24} color="#0465B0" />, type: 'Frontend' }, // WPF puede considerarse como UI, pero del lado de aplicaciones de escritorio
+  { name: 'Thymeleaf', description: 'Motor de plantillas', icon: <SiPostman size={24} color="#FF6C37" />, type: 'Backend' },
+  { name: 'Java', description: 'Lenguaje de programación', icon: <FaJava size={24} color="#007396" />, type: 'Backend' },
+  { name: 'C#', description: 'Lenguaje de Microsoft', icon: <SiCsharp size={24} color="#239120" />, type: 'Backend' },
+  { name: 'Spring', description: 'Framework para Java', icon: <SiSpring size={24} color="#6DB33F" />, type: 'Backend' },
+  { name: 'NodeJS', description: 'Entorno para JavaScript', icon: <FaNodeJs size={24} color="#339933" />, type: 'Backend' },
+  { name: 'MySQL', description: 'Sistema de gestión de bases de datos', icon: <SiMicrosoftsqlserver size={24} color="#4479A1" />, type: 'Backend' },
+  { name: 'MongoDB', description: 'Base de datos NoSQL', icon: <SiMongodb size={24} color="#47A248" />, type: 'Backend' },
+  { name: 'SCRUM', description: 'Marco de trabajo ágil', icon: <SiCoreldraw size={24} color="#F5C712" />, type: 'Extra' },
+  { name: 'Docker', description: 'Plataforma de contenedores', icon: <SiDocker size={24} color="#2496ED" />, type: 'Extra' },
+  { name: 'Git', description: 'Sistema de control de versiones', icon: <FaGitAlt size={24} color="#F05032" />, type: 'Extra' },
+  { name: 'GitHub', description: 'Plataforma de desarrollo', icon: <FaGithub size={24} color="#181717" />, type: 'Extra' },
 ];
 
 export default function SkillSlider() {
-  const [offset, setOffset] = useState(0);
   const [showAllSkills, setShowAllSkills] = useState(false);
-  const sliderRef = useRef<HTMLDivElement | null>(null); // Corregido: Aseguramos que el tipo puede ser HTMLDivElement o null
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+  //const visibleCards = 5;  Número de tarjetas visibles en un momento dado
+  const duplicatedSkills = [...skillsAll, ...skillsAll]; // Duplicar las tarjetas para el efecto loop
 
-  useEffect(() => {
-    const slider = sliderRef.current; // Usamos la referencia
-
-    if (!slider) return; // Aseguramos que el slider existe
-
-    let animationId: number;
-    let lastTimestamp = 0;
-
-    const animate = (timestamp: number) => {
-      if (lastTimestamp === 0) {
-        lastTimestamp = timestamp;
-      }
-      const elapsed = timestamp - lastTimestamp;
-
-      if (elapsed > 50) { // Mueve cada 50ms
-        setOffset((prevOffset) => (prevOffset + 1) % (skillGroups.length * 100));
-        lastTimestamp = timestamp;
-      }
-
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-
-    const pauseAnimation = () => {
-      cancelAnimationFrame(animationId);
-    };
-
-    const resumeAnimation = () => {
-      lastTimestamp = 0;
-      animationId = requestAnimationFrame(animate);
-    };
-
-    slider.addEventListener('mouseenter', pauseAnimation);
-    slider.addEventListener('mouseleave', resumeAnimation);
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      slider.removeEventListener('mouseenter', pauseAnimation);
-      slider.removeEventListener('mouseleave', resumeAnimation);
-    };
-  }, []);
-
-  // Corregimos el tipo del parámetro `group`
-  const renderSkillGroup = (group: SkillGroup) => (
-    <div key={group.name} className="flex-shrink-0 w-full md:w-1/3 px-2">
-      <div className="bg-white p-6 rounded-lg shadow-md h-full">
-        <div className="flex items-center mb-4">
-          {group.icon}
-          <h3 className="text-xl font-semibold ml-2">{group.name}</h3>
+  const renderSkillCard = (skill: { name: string; description: string; icon: JSX.Element,type: string},index: number) => (
+    <div key={index} className="flex-shrink-0 w-full lg:w-72 px-4">
+      <div className="bg-gray-100/90 p-5 rounded-lg h-full">
+        <div className="flex items-center justify-between">
+          {/* Ícono alineado a la izquierda */}
+          <div className="rounded-lg border border-gray-400/25 bg-white p-2 mr-4">
+            {skill.icon}
+          </div>
+          {/* Título alineado a la derecha */}
+          <div>
+            <h3 className="text-lg font-semibold mb-0 text-right">{skill.name}</h3>
+            {/* Subtítulo pequeño debajo del ícono */}
+            <span className="text-sm text-gray-500 mb-4">{skill.type}</span>
+          </div>
         </div>
-        <ul className="list-disc list-inside">
-          {group.skills.slice(0, 3).map((skill) => (
-            <li key={skill.name} className="flex items-center space-x-2">
-              {skill.icon}
-              <span>{skill.name}</span>
-            </li>
-          ))}
-        </ul>
+        {/* Descripción que ocupa todo el ancho de la tarjeta */}
+        <p className="mt-4 text-left text-md text-gray-500 w-full">
+          {skill.description}
+        </p>
       </div>
     </div>
   );
-
   return (
-    <div className="py-12">
-      <div className="container mx-auto px-4">
+      <section id="skill" className="py-12 mb-12 mx-auto w-full px-2 sm:px-8">
         <header className="flex justify-between items-center">
-        <h3 className="text-2xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
-          Skills
-        </h3>
-        {/* Botón para ver todos los proyectos */}
-        
+          <h3 className="text-2xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
+            Skills
+          </h3>
+          {/* Botón para ver todas las habilidades */}
           <button 
             onClick={() => setShowAllSkills(!showAllSkills)}
             className="flex items-center group hover:text-neutral-500 text-lime-600 dark:text-lime-300 mb-4 mt-12 transition-all duration-300" 
           >
-            See them all 
+            {showAllSkills ? 'Hide All Skills' : 'See All Skills'}
             <IoIosArrowForward 
               className="h-5 w-5 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" 
             />
           </button>
-      </header>
+        </header>
 
-        <div
-          ref={sliderRef}
-          className="relative overflow-hidden"
-          style={{ height: '250px' }}
-        >
+        {/* Slider de habilidades */}
+        {!showAllSkills && (
           <div
-            className="flex transition-transform duration-300 ease-in-out"
-            style={{
-              transform: `translateX(-${offset}%)`,
-              width: `${skillGroups.length * 100}%`,
-            }}
-          >
-            {[...skillGroups, ...skillGroups].map(renderSkillGroup)}
+            ref={sliderRef}
+            className="relative overflow-hidden group">
+              <div
+                className="flex animate-loop-scroll group-hover:paused"
+                style={{
+                  width: `${duplicatedSkills.length * (98 / 6)}%`,
+                }}>
+                {duplicatedSkills.map((skill, index) => renderSkillCard(skill, index))}
+              </div>
           </div>
-        </div>
-        <div className="text-center mt-8">
-          <button
-            onClick={() => setShowAllSkills(!showAllSkills)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded inline-flex items-center"
-          >
-            {showAllSkills ? 'Hide All Skills' : 'See All Skills'}
-          </button>
-        </div>
+        )}
 
+        {/* Mostrar todas las habilidades en una cuadrícula cuando se presiona "See All" */}
         {showAllSkills && (
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {skillGroups.map((group) => (
-              <div key={group.name} className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-center mb-4">
-                  {group.icon}
-                  <h4 className="text-xl font-semibold ml-2">{group.name}</h4>
+            {skillsAll.map((skill) => (
+              <div key={skill.name} className="bg-gray-100/80 p-4 rounded-lg">
+                <div className="flex items-start mb-4">
+                  <div className="rounded-full border border-gray-400/30 bg-white p-2">
+                    {skill.icon}
+                  </div>
                 </div>
-                <ul className="list-disc list-inside">
-                  {group.skills.map((skill) => (
-                    <li key={skill.name} className="flex items-center space-x-2">
-                      {skill.icon}
-                      <span>{skill.name}</span>
-                    </li>
-                  ))}
-                </ul>
+                <h4 className="text-left text-lg font-semibold">{skill.name}</h4>
+                <p className="text-left text-gray-500">{skill.description}</p>
               </div>
             ))}
           </div>
         )}
-      </div>
-    </div>
+      </section>
   );
 }

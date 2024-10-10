@@ -15,13 +15,15 @@ const config: Config = {
       },
     },
     keyframes: {
-      scroll: {
+      "loop-scroll": {
         '0%': { transform: 'translateX(0)' },
         '100%': { transform: 'translateX(-100%)' },
       },
+      // Mantén las animaciones predeterminadas (ej. `ping`) sin alterarlas.
     },
     animation: {
-      scroll: 'scroll 35s linear infinite', // 15s ajustable
+      "loop-scroll": 'loop-scroll 50s linear infinite', // 50s ajustable
+      // Mantén la animación `ping` predeterminada si la necesitas.
     },
   },
   plugins: [],

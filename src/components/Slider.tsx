@@ -1,77 +1,46 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaPython, FaJava, FaJsSquare, FaAngular, FaHtml5, FaCss3Alt } from 'react-icons/fa';
+import { BiLogoTypescript } from 'react-icons/bi';
+import { FaReact, FaNodeJs, FaPython, FaJava, FaJsSquare, FaAngular, FaHtml5, FaCss3Alt, FaBootstrap, FaGitAlt, FaGithub } from 'react-icons/fa';
+import { SiCoreldraw, SiCsharp, SiDocker, SiMicrosoftsqlserver, SiMongodb, SiPostman, SiSpring } from 'react-icons/si';
+import { DiDotnet } from "react-icons/di";
+const skills = [
+  { icon: <FaReact />, name: "React" },
+  { icon: <FaNodeJs />, name: "Node.js" },
+  { icon: <FaPython />, name: "Python" },
+  { icon: <FaJava />, name: "Java" },
+  { icon: <FaJsSquare />, name: "JavaScript" },
+  { icon: <FaAngular />, name: "Angular" },
+  { icon: <FaHtml5 />, name: "HTML5" },
+  { icon: <FaCss3Alt />, name: "CSS3" },
+  { icon: <BiLogoTypescript />, name: "TypeScript" },
+  { icon: <FaBootstrap />, name: "Bootstrap" },
+  { icon: <DiDotnet />, name: "WPF" },
+  { icon: <SiPostman />, name: "Thymeleaf" },
+  { icon: <SiCsharp />, name: "C#" },
+  { icon: <SiSpring />, name: "Spring" },
+  { icon: <SiMicrosoftsqlserver />, name: "MySQL" },
+  { icon: <SiMongodb />, name: "MongoDB" },
+  { icon: <SiCoreldraw />, name: "SCRUM" },
+  { icon: <SiDocker />, name: "Docker" },
+  { icon: <FaGitAlt />, name: "Git" },
+  { icon: <FaGithub />, name: "GitHub" },
+];
+
 
 export default function Slider() {
   return (
-    <div className="overflow-hidden w-full h-32 flex items-center">
-      <div className="flex w-max animate-scroll">
-        {/* Primer grupo de íconos */}
-        <div className="flex items-center mx-8">
-          <FaReact className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">React</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaNodeJs className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">Node.js</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaPython className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">Python</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaJava className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">Java</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaJsSquare className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">JavaScript</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaAngular className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">Angular</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaHtml5 className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">HTML5</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaCss3Alt className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">CSS3</span>
-        </div>
-
-        {/* Segundo grupo de íconos (duplicado para efecto infinito) */}
-        <div className="flex items-center mx-8">
-          <FaReact className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">React</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaNodeJs className="text-2xl" />
-          <span className="ml-3 text-lg font-medium">Node.js</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaPython className="text-2xl " />
-          <span className="ml-3 text-lg font-medium">Python</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaJava className="text-2xl " />
-          <span className="ml-3 text-lg font-medium">Java</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaJsSquare className="text-2xl " />
-          <span className="ml-3 text-lg font-medium">JavaScript</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaAngular className="text-2xl " />
-          <span className="ml-3 text-lg font-medium">Angular</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaHtml5 className="text-2xl " />
-          <span className="ml-3 text-lg font-medium">HTML5</span>
-        </div>
-        <div className="flex items-center mx-8">
-          <FaCss3Alt className="text-2xl " />
-          <span className="ml-3 text-lg font-medium">CSS3</span>
-        </div>
+    <div className="overflow-hidden w-full h-32 flex items-center group">
+      <div
+        className="flex w-[301%] animate-loop-scroll group-hover:paused"
+        style={{ display: 'flex' }}
+      >
+        {/* Duplicamos el array de skills para crear el efecto infinito */}
+        {skills.concat(skills).map((skill, index) => (
+          <div key={index} className="flex items-center mx-6">
+            <div className="text-2xl">{skill.icon}</div>
+            <span className="ml-2 text-lg font-medium">{skill.name}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
