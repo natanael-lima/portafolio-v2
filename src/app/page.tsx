@@ -5,10 +5,9 @@ import React, { useEffect, useState } from 'react'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Skills from "@/components/Skills";
-import About from "@/components/About";
 import Project from "@/components/Project";
-import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
+import Slider from "@/components/Slider";
 
 
 export default function Home() {
@@ -47,25 +46,22 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'bg-lime-950/20 text-neutral-100' : 'bg-neutral-100/80 text-neutral-900'}`}>
+    <div className={`min-h-screen ${darkMode ? 'bg-neutral-950/20 text-neutral-100' : 'bg-neutral-100/80  text-neutral-900'}`}>
       {/* Pasar darkMode y setDarkMode como props al Header */}
       <main className="mb-0">
-          <div className="mx-auto w-full px-4 sm:w-4/5 md:w-3/4 lg:w-3/5 bg-white dark:bg-neutral-600/10">
+          <div className="mx-auto w-full px-4 sm:w-4/5 md:w-2/4 lg:w-2/4 bg-white border border-neutral-400/20 dark:bg-neutral-600/10">
             <Header darkMode={darkMode} setDarkMode={setDarkMode} />
             <section className={`fade-in ${isVisible[0] ? 'fade-in-visible' : ''}`}>
               <Hero />
             </section>
+            <section className={`fade-in ${isVisible[1] ? 'fade-in-visible' : ''}`}>
+              <Slider />
+            </section>
             <section className={`fade-in ${isVisible[2] ? 'fade-in-visible' : ''}`}>
               <Project />
             </section>
-            <section className={`fade-in ${isVisible[1] ? 'fade-in-visible' : ''}`}>
-              <Skills />
-            </section>
-            <section className={`fade-in ${isVisible[1] ? 'fade-in-visible' : ''}`}>
-              <About />
-            </section>
             <section className={`fade-in ${isVisible[3] ? 'fade-in-visible' : ''}`}>
-              <Contact />
+              <Skills />
             </section>
             <section className={`fade-in ${isVisible[4] ? 'fade-in-visible' : ''}`}>
               <Footer />

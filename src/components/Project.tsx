@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
-import { FaHtml5, FaCss3Alt, FaAngular, FaBootstrap, FaJava, FaNodeJs, FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
-import { BiLogoTypescript } from 'react-icons/bi'
-import { DiDotnet } from 'react-icons/di'
-import { SiThymeleaf, SiCsharp, SiSpring, SiMongodb, SiMicrosoftsqlserver, SiJsonwebtokens } from 'react-icons/si'
-import { GrMysql } from 'react-icons/gr'
-import { AiOutlineDotNet } from 'react-icons/ai'
 import Link from 'next/link'
+import { FiArrowUpRight } from "react-icons/fi";
+import { IoIosArrowForward } from "react-icons/io";
 
 export const projects = [
   {
@@ -100,145 +96,121 @@ export const projects = [
   // Agrega más proyectos aquí
 ];
 
-const frontendSkills = [
-  { name: 'HTML', icon: <FaHtml5 size={24} /> },
-  { name: 'CSS', icon: <FaCss3Alt size={24} /> },
-  { name: 'TypeScript', icon: <BiLogoTypescript size={24} /> },
-  { name: 'Angular', icon: <FaAngular size={24} /> },
-  { name: 'Bootstrap', icon: <FaBootstrap size={24} /> },
-  { name: 'WinForm', icon: <DiDotnet size={24} /> },
-  { name: 'WPF', icon: <DiDotnet size={24} /> },
-  { name: 'Thymeleaf', icon: <SiThymeleaf size={20} /> },
-]
-
-const backendSkills = [
-  { name: 'Java', icon: <FaJava size={24} /> },
-  { name: 'C#', icon: <SiCsharp size={24} /> },
-  { name: 'Spring', icon: <SiSpring size={24} /> },
-  { name: 'NodeJS', icon: <FaNodeJs size={24} /> },
-  { name: 'MySQL', icon: <GrMysql size={24} /> },
-  { name: 'MongoDB', icon: <SiMongodb size={24} /> },
-  { name: '.NET', icon: <AiOutlineDotNet size={24} /> },
-  { name: 'SQLServer', icon: <SiMicrosoftsqlserver size={24} /> },
-  { name: 'JWT', icon: <SiJsonwebtokens size={24} /> },
-]
 
 export default function Project() {
-  const [selectedTechnology, setSelectedTechnology] = useState('All')
+  const [showAll, setShowAll] = useState(false); // Estado para controlar la visualización
 
-  const filteredProjects = selectedTechnology === 'All'
+  const filteredProjects = 'All' === 'All'
     ? projects
-    : projects.filter(project => 
-        project.technologies.some(tech => tech === selectedTechnology)
+    : projects.filter(project =>
+        project.technologies.some(tech => tech === 'All')
       );
+
+  // Solo mostrar los primeros 3 proyectos si `showAll` es falso
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 2);
 
   return (
     <section id="portfolio" className="mb-12 mx-auto w-full px-2 sm:px-14">
-        <h3 className="text-xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
-          Projects
-        </h3>
-
-      <div className="mb-4">
-        <button
-          onClick={() => setSelectedTechnology('All')}
-          className={`mr-2 mb-2 px-4 py-2 rounded-full transition-all duration-300 ${
-            selectedTechnology === 'All' 
-              ? 'bg-neutral-400/50 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-100' 
-              : 'text-neutral-800 dark:text-neutral-300 bg-neutral-400/20 dark:bg-neutral-600/20 hover:bg-neutral-500/30 dark:hover:bg-neutral-700/40'
-          }`}
+      <header className="flex justify-between items-center">
+      <h3 className="text-2xl font-semibold mb-4 mt-12 text-start text-neutral-800 dark:text-neutral-100">
+        Projects
+      </h3>
+      {/* Botón para ver todos los proyectos */}
+      {!showAll && (
+        <button 
+          onClick={() => setShowAll(true)} 
+          className="flex items-center group hover:text-neutral-500 text-lime-600 dark:text-lime-300 mb-4 mt-12 transition-all duration-300" 
         >
-          All
+          See them all 
+          <IoIosArrowForward 
+            className="h-5 w-5 ml-1 transform transition-transform duration-300 group-hover:translate-x-1" 
+          />
         </button>
-        {[...frontendSkills, ...backendSkills].map((skill, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedTechnology(skill.name)}
-            className={`mr-2 mb-2 px-4 py-2 rounded-full transition-all duration-300 ${
-              selectedTechnology === skill.name
-                ? 'bg-neutral-400/50 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-100'
-                : 'text-neutral-800 dark:text-neutral-300 bg-neutral-400/20 dark:bg-neutral-600/20 hover:bg-neutral-500/30 dark:hover:bg-neutral-700/40'
-            }`}
-          >
-            {skill.name}
-          </button>
-        ))}
-      </div>
+      )}
+    </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-      {filteredProjects.map((project) => (
-          <Link 
-            key={project.title}
-            href={project.demoLink}
-            className="relative rounded-lg p-4 hover:shadow-md transition-all duration-300 group hover:bg-neutral-100/80 dark:hover:bg-lime-200/5 flex"
-            style={{ display: 'flex', alignItems: 'flex-start' }}
-          >
-            {/* Columna de la imagen (30%) */}
-            <div className="w-2/5 mr-4">
-              <img 
-                src={project.img} 
-                alt={`Project ${project.title}`} 
-                className="w-full h-auto object-cover rounded-lg transition-transform duration-300"
-              />
+
+    <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4">
+      {visibleProjects.map((project) => (
+        <Link 
+          key={project.title}
+          href={project.demoLink}
+          className="relative rounded-lg p-4 hover:shadow-md transition-all duration-300 group hover:bg-neutral-100/80 dark:hover:bg-lime-200/5 flex"
+          style={{ display: 'flex', alignItems: 'flex-start' }}
+        >
+          {/* Columna de la imagen (30%) */}
+          <div className="w-2/6 mr-4">
+            <img 
+              src={project.img} 
+              alt={`Project ${project.title}`} 
+              className="w-full h-auto object-cover rounded-lg transition-transform duration-300"
+            />
+          </div>
+
+          {/* Columna de contenido (70%) */}
+          <div className="w-3/5 flex flex-col justify-between h-full">
+            {/* Título e Iconos */}
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="text-xl font-semibold text-lime-900 dark:text-neutral-100 group-hover:text-lime-600/80 dark:group-hover:text-lime-400/80 transition-colors">
+                {project.title}
+              </h3>
             </div>
 
-            {/* Columna de contenido (70%) */}
-            <div className="w-3/5 flex flex-col justify-between">
-              {/* Título e Iconos */}
-              <div className="flex justify-between items-start mb-2">
-                {/* Título */}
-                <h3 className="text-sm font-semibold text-lime-900 dark:text-neutral-100 group-hover:text-lime-600/80 dark:group-hover:text-lime-400/80 transition-colors">
-                  {project.title}
-                </h3>
+            {/* Descripción */}
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 mb-2">
+              {project.description}
+            </p>
 
-                {/* Iconos de Demo y Código */}
-                <div className="flex gap-3 z-10">
-                  {/* Icono de Código fuente */}
-                  <span 
-                    onClick={(e) => {
-                      e.stopPropagation(); // Evitar que el clic propague al enlace principal
-                      window.open(project.sourceLink, '_blank'); // Abrir en nueva pestaña
-                    }} 
-                    className="text-lime-900 dark:text-lime-100 dark:hover:text-lime-300 hover:text-lime-500 transition-colors cursor-pointer"
-                    aria-label="Source Code"
-                  >
-                    <FaGithub size={16} />
-                  </span>
-
-                  {/* Icono de Demo en vivo */}
-                  <span 
-                    onClick={(e) => {
-                      e.stopPropagation(); // Evitar que el clic propague al enlace principal
-                      window.open(project.demoLink, '_blank'); // Abrir en nueva pestaña
-                    }} 
-                    className="text-lime-900 dark:text-lime-100 dark:hover:text-lime-300 hover:text-lime-500 transition-colors cursor-pointer"
-                    aria-label="Live Demo"
-                  >
-                    <FaExternalLinkAlt size={16} />
-                  </span>
-                </div>
-              </div>
-
-              {/* Descripción */}
-              <p className="text-xs text-neutral-600 dark:text-neutral-400 mb-2">
-                {project.description}
-              </p>
-
-              {/* Tecnologías */}
-              <div className="flex flex-wrap gap-1 mt-2">
-                {project.technologies.map((tech) => (
-                  <span 
-                    key={tech} 
-                    className="bg-lime-500/20 text-lime-600/90 px-1.5 py-0.5 rounded-full text-xs font-normal dark:bg-lime-700/40 dark:text-lime-300/80"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            {/* Tecnologías */}
+            <div className="flex flex-wrap gap-2 mt-2 mb-2">
+              {project.technologies.map((tech) => (
+                <span 
+                  key={tech} 
+                  className="bg-lime-500/20 text-lime-600/90 px-1.5 py-0.5 rounded-full text-xs font-normal dark:bg-lime-700/40 dark:text-lime-300/80"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
-          </Link>
-        ))}
+            <div className="mt-auto flex gap-2 mt-2 z-10">
+                {/* Icono de Código fuente */}
+                <span 
+                  onClick={(e) => {
+                    e.stopPropagation(); // Evitar que el clic propague al enlace principal
+                    window.open(project.sourceLink, '_blank');
+                  }} 
+                  className="flex items-center text-md font-semibold text-lime-600 dark:text-lime-100 dark:hover:text-lime-300 hover:text-lime-500 transition-colors cursor-pointer"
+                  aria-label="Source Code"
+                >
+                   Source <FiArrowUpRight className='ml-1 h-4 w-4'/>
+                </span>
 
-      </div>
-    </section>
+                {/* Icono de Demo en vivo */}
+                <span 
+                  onClick={(e) => {
+                    e.stopPropagation(); // Evitar que el clic propague al enlace principal
+                    window.open(project.demoLink, '_blank');
+                  }} 
+                  className="flex items-center text-md font-semibold text-lime-600 dark:text-lime-100 dark:hover:text-lime-300 hover:text-lime-500 transition-colors cursor-pointer"
+                  aria-label="Live Demo"
+                >
+                  Demo <FiArrowUpRight className='ml-1 h-4 w-4'/>
+                </span>
+              </div>
+          </div>
+        </Link>
+      ))}
+    </div>
+
+    {/* Mostrar botón para ocultar proyectos si están todos visibles */}
+    {showAll && (
+      <button 
+        onClick={() => setShowAll(false)} 
+        className="mt-6 block mx-auto text-lime-600 dark:text-lime-300 hover:text-lime-500 transition-colors"
+      >
+        Show less
+      </button>
+    )}
+  </section>
   );
 }

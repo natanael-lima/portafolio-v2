@@ -14,6 +14,15 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
     },
+    keyframes: {
+      scroll: {
+        '0%': { transform: 'translateX(0)' },
+        '100%': { transform: 'translateX(-100%)' },
+      },
+    },
+    animation: {
+      scroll: 'scroll 35s linear infinite', // 15s ajustable
+    },
   },
   plugins: [],
 };
