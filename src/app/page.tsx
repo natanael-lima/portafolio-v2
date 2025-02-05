@@ -15,7 +15,7 @@ export default function Home() {
   return (
      <div className="min-h-screen bg-gradient-to-r from-neutral-950 from-10% via-50% to-neutral-900 to-90% text-slate-900">
      {/* Contenedor principal */}
-     <div className="mx-auto w-full px-6 sm:w-4/5 md:w-3/4 lg:w-3/4 py-12">
+     <div className="mx-auto w-full px-6 sm:w-4/5 md:w-[100%] lg:w-[100%] xl:w-[75%] py-12">
        {/* Diseño Bento */}
        <main className="grid grid-cols-12 gap-4">
          {/* Primera fila */}
