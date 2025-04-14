@@ -22,9 +22,11 @@ export default function About() {
   
       {/* Botón volver */}
       <div className="w-full mt-3 sm:mt-0 sm:w-auto sm:ml-auto">
-        <button className="w-full sm:w-44 bg-neutral-800 hover:bg-neutral-700 p-3 text-neutral-300 rounded-lg flex justify-center items-center transition">
-          <a href="/">View More Profile</a>
-        </button>
+        <a href="/">
+          <button className="w-full sm:w-44 bg-neutral-800 hover:bg-neutral-700 p-3 text-neutral-300 rounded-lg flex justify-center items-center transition">
+            View More Profile
+          </button>
+        </a>
       </div>
     </div>
   </article>
